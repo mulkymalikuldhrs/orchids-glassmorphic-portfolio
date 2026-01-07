@@ -20,12 +20,21 @@
 }
 
 :root {
-  --background: oklch(0.08 0.01 240); /* Almost black */
-  --foreground: oklch(0.92 0.01 240); /* Off white */
+  --background: oklch(0.08 0.01 240);
+  --foreground: oklch(0.92 0.01 240);
   --card: oklch(1 0 0 / 3%);
   --card-foreground: oklch(0.92 0.01 240);
   --primary: oklch(0.4 0.1 260);
   --border: oklch(1 0 0 / 8%);
+}
+
+.light {
+  --background: oklch(0.98 0.005 240);
+  --foreground: oklch(0.15 0.01 240);
+  --card: oklch(0 0 0 / 3%);
+  --card-foreground: oklch(0.15 0.01 240);
+  --primary: oklch(0.5 0.15 260);
+  --border: oklch(0 0 0 / 8%);
 }
 
 @layer base {
@@ -37,16 +46,33 @@
     background-image: 
       radial-gradient(circle at 0% 0%, oklch(0.2 0.05 260 / 20%) 0%, transparent 40%),
       radial-gradient(circle at 100% 100%, oklch(0.15 0.02 240 / 20%) 0%, transparent 40%);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  .light body,
+  body:is(.light *) {
+    background-image: 
+      radial-gradient(circle at 0% 0%, oklch(0.85 0.05 260 / 15%) 0%, transparent 40%),
+      radial-gradient(circle at 100% 100%, oklch(0.9 0.02 240 / 15%) 0%, transparent 40%);
   }
 }
 
 @layer utilities {
   .glass {
     @apply bg-white/3 backdrop-blur-2xl border border-white/5 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)];
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+  
+  .light .glass {
+    @apply bg-black/3 border-black/5 shadow-[0_4px_24px_-1px_rgba(0,0,0,0.08)];
   }
   
   .glass-dark {
     @apply bg-black/40 backdrop-blur-3xl border border-white/5;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+  }
+  
+  .light .glass-dark {
+    @apply bg-white/60 border-black/5;
   }
 
   .text-subtle {

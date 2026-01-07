@@ -5,7 +5,9 @@ import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useTheme } from "@/hooks/useTheme";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 const navItems = [
   { nameKey: "home", path: "/" },
@@ -18,6 +20,7 @@ const navItems = [
 export function Navbar() {
   const pathname = usePathname();
   const { t } = useLanguage();
+  const { theme } = useTheme();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 sm:p-6 pointer-events-none">
@@ -32,13 +35,18 @@ export function Navbar() {
                 href={item.path}
                 className={cn(
                   "relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm transition-colors rounded-full font-light whitespace-nowrap",
-                  isActive ? "text-white" : "text-white/40 hover:text-white/70"
+                  isActive 
+                    ? theme === 'dark' ? "text-white" : "text-gray-900" 
+                    : theme === 'dark' ? "text-white/40 hover:text-white/70" : "text-gray-600 hover:text-gray-900"
                 )}
               >
                   {isActive && (
                     <motion.div
                       layoutId="nav-pill"
-                      className="absolute inset-0 bg-white/10 rounded-full"
+                      className={cn(
+                        "absolute inset-0 rounded-full",
+                        theme === 'dark' ? "bg-white/10" : "bg-black/10"
+                      )}
                       transition={{ 
                         type: "spring", 
                         bounce: 0.15, 
@@ -53,7 +61,10 @@ export function Navbar() {
             );
           })}
         </div>
-        <LanguageSwitcher />
+        <div className="flex items-center gap-2">
+          <ThemeSwitcher />
+          <LanguageSwitcher />
+        </div>
       </div>
     </nav>
   );
