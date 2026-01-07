@@ -18,7 +18,7 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6 pointer-events-none">
-      <div className="glass px-2 py-2 rounded-full flex items-center gap-1 pointer-events-auto">
+      <div className="glass px-1 py-1 sm:px-2 sm:py-2 rounded-full flex items-center gap-0.5 sm:gap-1 pointer-events-auto overflow-x-auto no-scrollbar max-w-[95vw]">
         {navItems.map((item) => {
           const isActive = pathname === item.path;
           return (
@@ -26,7 +26,7 @@ export function Navbar() {
               key={item.path}
               href={item.path}
               className={cn(
-                "relative px-4 py-1.5 text-sm transition-colors rounded-full font-light",
+                "relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm transition-colors rounded-full font-light whitespace-nowrap",
                 isActive ? "text-white" : "text-white/40 hover:text-white/70"
               )}
             >

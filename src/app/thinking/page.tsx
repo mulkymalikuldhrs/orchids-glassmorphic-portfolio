@@ -43,10 +43,10 @@ export default function ThinkingPage() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-2xl mb-16"
+        className="max-w-2xl mb-12 sm:mb-16"
       >
-        <h1 className="heading-display text-4xl md:text-5xl mb-6">Thinking</h1>
-        <p className="text-subtle">
+        <h1 className="heading-display text-4xl sm:text-5xl mb-4 sm:mb-6">Thinking</h1>
+        <p className="text-subtle text-sm sm:text-base">
           Mini-insights and frameworks. Not routine, but high density.
         </p>
       </motion.div>
