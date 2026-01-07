@@ -2,14 +2,22 @@
 
 import { motion } from "framer-motion";
 import { useTheme } from "@/hooks/useTheme";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 export function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();
+  const { playClick, playHover } = useSoundEffects();
   const isDark = theme === 'dark';
+
+  const handleClick = () => {
+    playClick();
+    toggleTheme();
+  };
 
   return (
     <button
-      onClick={toggleTheme}
+      onClick={handleClick}
+      onMouseEnter={playHover}
       className="relative w-14 h-7 glass rounded-full p-1 border border-white/10 transition-colors duration-500"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >

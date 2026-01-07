@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/hooks/useLanguage";
 import { useTheme } from "@/hooks/useTheme";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeSwitcher } from "./ThemeSwitcher";
 
@@ -21,6 +22,7 @@ export function Navbar() {
   const pathname = usePathname();
   const { t } = useLanguage();
   const { theme } = useTheme();
+  const { playClick, playHover } = useSoundEffects();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 sm:p-6 pointer-events-none">
@@ -33,6 +35,8 @@ export function Navbar() {
               <Link
                 key={item.path}
                 href={item.path}
+                onClick={playClick}
+                onMouseEnter={playHover}
                 className={cn(
                   "relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm transition-colors rounded-full font-light whitespace-nowrap",
                   isActive 

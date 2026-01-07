@@ -1,7 +1,6 @@
-"use client";
-
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 interface GlassCardProps {
   children: React.ReactNode;
@@ -10,12 +9,16 @@ interface GlassCardProps {
 }
 
 export function GlassCard({ children, className, delay = 0 }: GlassCardProps) {
+  const { playClick, playHover } = useSoundEffects();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -4 }}
       whileTap={{ scale: 0.99 }}
+      onMouseEnter={playHover}
+      onClick={playClick}
       transition={{ 
         duration: 0.6, 
         delay, 

@@ -5,9 +5,11 @@ import { GlassCard } from "@/components/GlassCard";
 import { ArrowRight, Github, Instagram, Mail } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useSoundEffects } from "@/hooks/useSoundEffects";
 
 export default function Home() {
   const { t } = useLanguage();
+  const { playClick, playHover } = useSoundEffects();
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[85vh] px-6 text-center">
@@ -71,18 +73,43 @@ export default function Home() {
         </div>
 
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-            <Link href="/ai" className="group flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 glass rounded-full hover:bg-white/10 transition-all duration-500 text-sm sm:text-base">
+            <Link 
+              href="/ai" 
+              onClick={playClick}
+              onMouseEnter={playHover}
+              className="group flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 glass rounded-full hover:bg-white/10 transition-all duration-500 text-sm sm:text-base"
+            >
               <span className="font-light">{t.home.cta}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <div className="flex items-center gap-3 sm:gap-4">
-              <a href="https://github.com/mulkymalikuldhrs" target="_blank" className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" title="GitHub">
+              <a 
+                href="https://github.com/mulkymalikuldhrs" 
+                target="_blank" 
+                onClick={playClick}
+                onMouseEnter={playHover}
+                className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" 
+                title="GitHub"
+              >
                 <Github className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
-              <a href="https://instagram.com/mulkymalikuldhr" target="_blank" className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" title="Instagram">
+              <a 
+                href="https://instagram.com/mulkymalikuldhr" 
+                target="_blank" 
+                onClick={playClick}
+                onMouseEnter={playHover}
+                className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" 
+                title="Instagram"
+              >
                 <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
-              <a href="mailto:mulkymalikuldhr@mail.com" className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" title="Email">
+              <a 
+                href="mailto:mulkymalikuldhr@mail.com" 
+                onClick={playClick}
+                onMouseEnter={playHover}
+                className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" 
+                title="Email"
+              >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             </div>
