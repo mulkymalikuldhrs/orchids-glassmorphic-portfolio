@@ -4,44 +4,27 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, User, Bot, Sparkles } from "lucide-react";
 import { GlassCard } from "./GlassCard";
-
-const INITIAL_MESSAGE = {
-  role: "assistant",
-  content: "Aku adalah AI Companion Mulky. Aku tidak menjual apa pun. Aku menjelaskan cara berpikir, proyek, dan arah hidup Mulky dengan jujur. Apa yang ingin kamu ketahui?",
-};
-
-const KNOWLEDGE_BASE = [
-  {
-    keywords: ["siapa", "mulky", "identitas"],
-    response: "Mulky adalah seorang pembangun sistem, bukan pembuat kebisingan. Ia fokus pada logika keputusan, pasar FX, dan pengembangan agen AI dengan pendekatan jangka panjang."
-  },
-  {
-    keywords: ["proyek", "kerjaan", "ngapain"],
-    response: "Saat ini Mulky sedang mengeksplorasi Quantitative Trading dan Decision Logic. Proyek-proyeknya bisa kamu lihat di bagian Projects, yang dibagi menjadi Live, In Progress, dan Konseptual."
-  },
-  {
-    keywords: ["aceh", "asal"],
-    response: "Mulky berasal dari Aceh. Filosofi 'Aceh Subtle'—tenang di luar, keras di dalam—menjadi landasan karyanya: futuristic restraint."
-  },
-    {
-      keywords: ["tujuan", "visi"],
-      response: "Visi Mulky adalah membangun 'gravity field' di mana orang yang tepat akan datang dengan sendirinya melalui karya yang deliberatif, bukan melalui validasi sosial yang ramai."
-    },
-    {
-      keywords: ["kontak", "email", "instagram", "hubungi"],
-      response: "Kamu bisa menghubungi Mulky melalui email di mulkymalikuldhr@mail.com atau mengikuti perjalanannya di Instagram @mulkymalikuldhr. Ia juga aktif di GitHub dengan username @mulkymalikuldhrs."
-    },
-    {
-      keywords: ["skill", "kemampuan", "teknologi"],
-      response: "Mulky bekerja dengan Next.js, AI Agent frameworks, dan alat analisis kuantitatif. Namun, baginya teknologi hanyalah alat—kekuatan aslinya terletak pada desain sistem dan logika keputusan."
-    }
-  ];
+import { useLanguage } from "@/hooks/useLanguage";
 
 export function AICompanion() {
-  const [messages, setMessages] = useState([INITIAL_MESSAGE]);
+  const { t } = useLanguage();
+  const [messages, setMessages] = useState([{
+    role: "assistant",
+    content: t.ai.initialMessage,
+  }]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  // Update initial message when language changes
+  useEffect(() => {
+    if (messages.length === 1 && messages[0].role === "assistant") {
+      setMessages([{
+        role: "assistant",
+        content: t.ai.initialMessage,
+      }]);
+    }
+  }, [t.ai.initialMessage]);
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -59,10 +42,12 @@ export function AICompanion() {
 
     // Simulated "deliberate" thinking
     setTimeout(() => {
-      let responseContent = "Aku butuh waktu untuk merenungkan itu. Secara umum, Mulky selalu mengedepankan sistem dan logika jangka panjang daripada tren sesaat.";
+      let responseContent = t.ai.defaultResponse;
       
       const lowerInput = input.toLowerCase();
-      for (const entry of KNOWLEDGE_BASE) {
+      const knowledgeBase = t.ai.knowledge || [];
+      
+      for (const entry of knowledgeBase) {
         if (entry.keywords.some(k => lowerInput.includes(k))) {
           responseContent = entry.response;
           break;
@@ -125,13 +110,14 @@ export function AICompanion() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
-            placeholder="Tanyakan tentang sistem atau visi Mulky..."
+            placeholder={t.ai.placeholder}
             className="flex-1 bg-transparent border-none outline-none px-4 py-2 text-sm placeholder:text-white/20"
           />
           <button
             onClick={handleSend}
             disabled={isTyping || !input.trim()}
             className="p-2 bg-white/5 hover:bg-white/10 rounded-xl transition-colors disabled:opacity-50"
+            aria-label={t.ai.inputLabel}
           >
             <Send className="w-4 h-4" />
           </button>

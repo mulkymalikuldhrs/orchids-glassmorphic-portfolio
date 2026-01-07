@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { GlassCard } from "@/components/GlassCard";
 import { ArrowRight, Github, Instagram, Mail } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/hooks/useLanguage";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <div className="flex flex-col items-center justify-center min-h-[85vh] px-6 text-center">
       {/* Hero Visual Element */}
@@ -49,21 +52,21 @@ export default function Home() {
           Mulky Malikul Dhaher
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl text-subtle mb-8 sm:mb-12 max-w-2xl mx-auto leading-relaxed">
-          Building systems, not noise.
+          {t.home.hero_sub}
         </p>
 
         <div className="flex flex-col gap-3 sm:gap-4 items-center mb-12 sm:mb-16">
           <p className="text-white/40 text-[10px] sm:text-sm tracking-[0.2em] uppercase px-4">
-            Beginner in FX Markets · AI Agent Enthusiasm · Decision Logic
+            {t.home.skills}
           </p>
           <p className="text-white/60 text-sm sm:text-base font-light italic">
-            Solo. Deliberate. Long-term.
+            {t.home.philosophy}
           </p>
         </div>
 
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link href="/ai" className="group flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 glass rounded-full hover:bg-white/10 transition-all duration-500 text-sm sm:text-base">
-              <span className="font-light">Talk to Mulky (AI)</span>
+              <span className="font-light">{t.home.cta}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <div className="flex items-center gap-3 sm:gap-4">
