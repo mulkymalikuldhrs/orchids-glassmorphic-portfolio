@@ -12,10 +12,18 @@ interface GlassCardProps {
 export function GlassCard({ children, className, delay = 0 }: GlassCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={cn("glass rounded-3xl p-8", className)}
+      whileHover={{ y: -4 }}
+      whileTap={{ scale: 0.99 }}
+      transition={{ 
+        duration: 0.6, 
+        delay, 
+        ease: [0.22, 1, 0.36, 1],
+        y: { type: "spring", stiffness: 300, damping: 20 }
+      }}
+      style={{ willChange: "transform, opacity" }}
+      className={cn("glass rounded-3xl p-8 transition-shadow hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.2)]", className)}
     >
       {children}
     </motion.div>

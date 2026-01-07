@@ -35,13 +35,19 @@ export function Navbar() {
                   isActive ? "text-white" : "text-white/40 hover:text-white/70"
                 )}
               >
-                {isActive && (
-                  <motion.div
-                    layoutId="nav-pill"
-                    className="absolute inset-0 bg-white/10 rounded-full"
-                    transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                  />
-                )}
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-white/10 rounded-full"
+                      transition={{ 
+                        type: "spring", 
+                        bounce: 0.15, 
+                        duration: 0.5,
+                        layout: { duration: 0.3 } 
+                      }}
+                      style={{ willChange: "transform, opacity" }}
+                    />
+                  )}
                 <span className="relative z-10">{name}</span>
               </Link>
             );

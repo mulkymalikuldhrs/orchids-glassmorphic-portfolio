@@ -19,22 +19,24 @@ export default function Home() {
             borderRadius: ["40% 60% 70% 30% / 40% 50% 60% 70%", "60% 40% 30% 70% / 50% 60% 70% 40%", "40% 60% 70% 30% / 40% 50% 60% 70%"],
           }}
           transition={{
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             ease: "linear",
           }}
+          style={{ willChange: "transform, border-radius" }}
           className="absolute inset-0 border border-white/10 bg-gradient-to-br from-primary/10 to-transparent blur-sm"
         />
         <motion.div
           animate={{
             scale: [1, 1.1, 1],
-            opacity: [0.3, 0.6, 0.3],
+            opacity: [0.3, 0.5, 0.3],
           }}
           transition={{
-            duration: 8,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
           }}
+          style={{ willChange: "transform, opacity" }}
           className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/20 blur-2xl"
         />
         <div className="relative z-10 glass-dark w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center border border-white/10">
@@ -43,9 +45,13 @@ export default function Home() {
       </div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
+        transition={{ 
+          duration: 0.8, 
+          delay: 0.1,
+          ease: [0.22, 1, 0.36, 1] 
+        }}
         className="max-w-3xl"
       >
         <h1 className="heading-display text-4xl sm:text-5xl md:text-7xl mb-4 sm:mb-6 leading-tight">
@@ -90,7 +96,7 @@ export default function Home() {
         transition={{ delay: 2, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white/20 to-transparent" />
+        <div className="w-[1px] h-12 bg-gradient-to-b from-white/20 to-transparent animate-float" />
       </motion.div>
     </div>
   );

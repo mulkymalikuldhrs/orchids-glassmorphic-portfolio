@@ -66,13 +66,15 @@ export function AICompanion() {
         className="flex-1 overflow-y-auto p-4 space-y-4 sm:space-y-6 scrollbar-hide"
       >
         <AnimatePresence initial={false}>
-          {messages.map((m, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
-            >
+            {messages.map((m, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                style={{ willChange: "transform, opacity" }}
+                className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+              >
               <div className={`flex gap-2 sm:gap-3 max-w-[85%] sm:max-w-[80%] ${m.role === "user" ? "flex-row-reverse" : "flex-row"}`}>
                 <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex-shrink-0 flex items-center justify-center border border-white/10 ${m.role === "user" ? "bg-white/5" : "bg-primary/20"}`}>
                   {m.role === "user" ? <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />}
