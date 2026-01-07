@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { VisualEditsMessenger } from "orchids-visual-edits";
 import { VisitorTracker } from "@/components/VisitorTracker";
+import { Navbar } from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Glassmorphic Portfolio | Creative Developer",
-  description: "A stunning glassmorphic portfolio built with Next.js and Framer Motion",
+  title: "Mulky Malikul Dhaher",
+  description: "Building systems, not noise. Personal workspace of Mulky Malikul Dhaher.",
 };
 
 export default function RootLayout({
@@ -15,16 +16,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="antialiased min-h-screen relative overflow-x-hidden">
+      <body className="antialiased min-h-screen relative overflow-x-hidden bg-background">
         <VisitorTracker />
-        {/* Animated Background Blobs */}
-        <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[120px] animate-blob" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-accent/20 blur-[120px] animate-blob animation-delay-2000" />
-          <div className="absolute top-[20%] right-[20%] w-[30%] h-[30%] rounded-full bg-primary/10 blur-[100px] animate-blob animation-delay-4000" />
-        </div>
         
-        {children}
+        {/* Background Atmosphere */}
+        <div className="fixed inset-0 -z-10 pointer-events-none">
+          <div className="absolute top-[10%] left-[5%] w-[30%] h-[30%] rounded-full bg-primary/5 blur-[120px] animate-float" />
+          <div className="absolute bottom-[10%] right-[5%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[150px] animate-float" style={{ animationDelay: '-5s' }} />
+        </div>
+
+        <Navbar />
+        
+        <main className="relative pt-20">
+          {children}
+        </main>
+
+        <footer className="py-12 px-6 text-center border-t border-white/5 bg-black/20">
+          <p className="text-subtle text-sm">
+            © {new Date().getFullYear()} Mulky Malikul Dhaher. Solo. Deliberate. Long-term.
+          </p>
+        </footer>
+
         <VisualEditsMessenger />
       </body>
     </html>
