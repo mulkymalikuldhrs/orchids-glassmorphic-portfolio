@@ -17,13 +17,25 @@ const thoughts = [
     content: "Separate the intent from the execution. Let the agent handle the 'how', but the human defines the 'why' through rigid system constraints.",
     icon: Zap
   },
-  {
-    title: "Solo Builder System",
-    type: "System Note",
-    content: "The bottleneck of a solo builder is not code—it's decision fatigue. Automate the low-level choices to preserve high-level intuition.",
-    icon: BookOpen
-  }
-];
+    {
+      title: "Solo Builder System",
+      type: "System Note",
+      content: "The bottleneck of a solo builder is not code—it's decision fatigue. Automate the low-level choices to preserve high-level intuition.",
+      icon: BookOpen
+    },
+    {
+      title: "Futuristic Restraint",
+      type: "Design Logic",
+      content: "Luxury is not adding more features, but removing everything that isn't essential until only the soul of the system remains.",
+      icon: Zap
+    },
+    {
+      title: "Long-term Node",
+      type: "Network Effect",
+      content: "Don't compete for attention. Compete for reliability. In the long run, the most stable nodes become the foundation for everyone else.",
+      icon: Target
+    }
+  ];
 
 export default function ThinkingPage() {
   return (

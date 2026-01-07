@@ -59,7 +59,7 @@ export default function AboutPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="pt-12 border-t border-white/5"
+          className="pt-12 border-t border-white/5 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between"
         >
           <Link 
             href="/resume-locked" 
@@ -69,6 +69,18 @@ export default function AboutPage() {
             <span className="text-sm font-light">View Professional Path</span>
             <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
           </Link>
+
+          <div className="flex gap-6">
+            <a href="mailto:mulkymalikuldhr@mail.com" className="text-white/40 hover:text-white transition-colors">
+              <Mail className="w-5 h-5" />
+            </a>
+            <a href="https://instagram.com/mulkymalikuldhr" target="_blank" className="text-white/40 hover:text-white transition-colors">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="https://github.com/mulkymalikuldhrs" target="_blank" className="text-white/40 hover:text-white transition-colors">
+              <Github className="w-5 h-5" />
+            </a>
+          </div>
         </motion.div>
       </div>
     </div>

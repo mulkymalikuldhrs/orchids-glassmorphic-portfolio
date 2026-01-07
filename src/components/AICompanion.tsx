@@ -23,11 +23,19 @@ const KNOWLEDGE_BASE = [
     keywords: ["aceh", "asal"],
     response: "Mulky berasal dari Aceh. Filosofi 'Aceh Subtle'—tenang di luar, keras di dalam—menjadi landasan karyanya: futuristic restraint."
   },
-  {
-    keywords: ["tujuan", "visi"],
-    response: "Visi Mulky adalah membangun 'gravity field' di mana orang yang tepat akan datang dengan sendirinya melalui karya yang deliberatif, bukan melalui validasi sosial yang ramai."
-  }
-];
+    {
+      keywords: ["tujuan", "visi"],
+      response: "Visi Mulky adalah membangun 'gravity field' di mana orang yang tepat akan datang dengan sendirinya melalui karya yang deliberatif, bukan melalui validasi sosial yang ramai."
+    },
+    {
+      keywords: ["kontak", "email", "instagram", "hubungi"],
+      response: "Kamu bisa menghubungi Mulky melalui email di mulkymalikuldhr@mail.com atau mengikuti perjalanannya di Instagram @mulkymalikuldhr. Ia juga aktif di GitHub dengan username @mulkymalikuldhrs."
+    },
+    {
+      keywords: ["skill", "kemampuan", "teknologi"],
+      response: "Mulky bekerja dengan Next.js, AI Agent frameworks, dan alat analisis kuantitatif. Namun, baginya teknologi hanyalah alat—kekuatan aslinya terletak pada desain sistem dan logika keputusan."
+    }
+  ];
 
 export function AICompanion() {
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);

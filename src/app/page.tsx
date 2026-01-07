@@ -61,16 +61,23 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
-          <Link href="/ai" className="group flex items-center gap-2 px-8 py-4 glass rounded-full hover:bg-white/10 transition-all duration-500">
-            <span className="font-light">Talk to Mulky (AI)</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-          <a href="https://github.com" target="_blank" className="flex items-center gap-2 px-8 py-4 glass rounded-full hover:bg-white/10 transition-all duration-500">
-            <Github className="w-4 h-4" />
-            <span className="font-light">GitHub</span>
-          </a>
-        </div>
+          <div className="flex flex-wrap justify-center gap-6">
+            <Link href="/ai" className="group flex items-center gap-2 px-8 py-4 glass rounded-full hover:bg-white/10 transition-all duration-500">
+              <span className="font-light">Talk to Mulky (AI)</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <div className="flex items-center gap-4">
+              <a href="https://github.com/mulkymalikuldhrs" target="_blank" className="p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" title="GitHub">
+                <Github className="w-5 h-5" />
+              </a>
+              <a href="https://instagram.com/mulkymalikuldhr" target="_blank" className="p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" title="Instagram">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="mailto:mulkymalikuldhr@mail.com" className="p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" title="Email">
+                <Mail className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
       </motion.div>
 
       {/* Subtle Scroll Indicator */}

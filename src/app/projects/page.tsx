@@ -11,7 +11,7 @@ const projects = [
     whyInteresting: "Uses recursive logic nodes to ensure system stability.",
     status: "Active / Core System",
     category: "Live",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com/mulkymalikuldhrs"
   },
   {
     title: "FX Agent Pro",
@@ -20,7 +20,7 @@ const projects = [
     whyInteresting: "Implements proprietary decision logic to filter high-probability setups.",
     status: "WIP / Alpha Testing",
     category: "In Progress",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com/mulkymalikuldhrs"
   },
   {
     title: "Aceh Subtle Design",
@@ -29,7 +29,7 @@ const projects = [
     whyInteresting: "Blends futuristic aesthetics with minimal, deliberate interactions.",
     status: "Conceptual / Prototype",
     category: "Conceptual",
-    githubUrl: "https://github.com"
+    githubUrl: "https://github.com/mulkymalikuldhrs"
   }
 ];
 
