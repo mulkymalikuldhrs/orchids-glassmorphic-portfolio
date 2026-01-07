@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/GlassCard";
-import { Lock, ArrowRight } from "lucide-react";
+import { Lock, ArrowRight, Mail, Instagram, Github } from "lucide-react";
 import Link from "next/link";
 
 export default function AboutPage() {
