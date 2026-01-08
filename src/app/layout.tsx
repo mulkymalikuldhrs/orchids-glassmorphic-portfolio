@@ -10,81 +10,116 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Mulky Malikul Dhaher | System Builder & Developer",
   description: "Building systems, not noise. Personal workspace of Mulky Malikul Dhaher. Expert in Glassmorphic design, Next.js, and Fullstack Development.",
-  keywords: [
-    "Mulky Malikul Dhaher", 
-    "System Builder", 
-    "Software Engineer", 
-    "Next.js Developer", 
-    "React Developer", 
-    "Glassmorphic Design", 
-    "Portfolio", 
-    "Tech Trends 2026", 
-    "Aceh Subtle", 
-    "Fullstack Developer",
-    "Web Development",
-    "Creative Coding",
-    "UI/UX Design",
-    "Modern Web",
-    "#MulkyMalikulDhaher",
-    "#SystemBuilder",
-    "#NextJS",
-    "#Glassmorphism",
-    "#DeveloperPortfolio"
-  ],
-  authors: [{ name: "Mulky Malikul Dhaher" }],
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://mulkymalikuldhaher.com",
-    title: "Mulky Malikul Dhaher | System Builder & Developer",
-    description: "Building systems, not noise. Personal workspace of Mulky Malikul Dhaher.",
-    siteName: "Mulky Malikul Dhaher Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mulky Malikul Dhaher | System Builder & Developer",
-    description: "Building systems, not noise.",
-    creator: "@mulkymalikuldhr",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    keywords: [
+      "Mulky Malikul Dhaher", 
+      "System Builder", 
+      "Software Engineer", 
+      "Next.js Developer", 
+      "React Developer", 
+      "Glassmorphic Design", 
+      "Portfolio", 
+      "Tech Trends 2026", 
+      "Aceh Subtle", 
+      "Fullstack Developer",
+      "Web Development",
+      "Creative Coding",
+      "UI/UX Design",
+      "Modern Web",
+      "#MulkyMalikulDhaher",
+      "#SystemBuilder",
+      "#NextJS",
+      "#Glassmorphism",
+      "#DeveloperPortfolio",
+      "Wikipedia",
+      "wikiHow",
+      "Wiki",
+      "Authority Site",
+      "How to build systems",
+      "Mulky Malikul Dhaher Official"
+    ],
+    authors: [{ name: "Mulky Malikul Dhaher" }],
+    manifest: "/site.webmanifest",
+    other: {
+      "msapplication-TileColor": "#000000",
+      "msapplication-config": "/browserconfig.xml",
+      "theme-color": "#000000",
+    },
+    openGraph: {
+      type: "website",
+      locale: "en_US",
+      url: "https://mulkymalikuldhaher.com",
+      title: "Mulky Malikul Dhaher | System Builder & Developer",
+      description: "Official workspace and biography of Mulky Malikul Dhaher. Building systems, not noise.",
+      siteName: "Mulky Malikul Dhaher",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Mulky Malikul Dhaher | System Builder & Developer",
+      description: "Building systems, not noise. Personal workspace of Mulky Malikul Dhaher.",
+      creator: "@mulkymalikuldhr",
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-};
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="dark">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Mulky Malikul Dhaher",
-              "url": "https://mulkymalikuldhaher.com",
-              "jobTitle": "System Builder & Software Engineer",
-              "description": "Expert in Next.js, Glassmorphism, and modern web systems.",
-              "sameAs": [
-                "https://github.com/mulkymalikuldhrs",
-                "https://instagram.com/mulkymalikuldhr"
-              ]
-            })
-          }}
-        />
-      </head>
+    verification: {
+      google: "google-site-verification-placeholder",
+      yandex: "yandex-verification-placeholder",
+      me: "me-verification-placeholder",
+    },
+  };
+  
+  export default function RootLayout({
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>) {
+    return (
+      <html lang="en" className="dark">
+        <head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify([
+                {
+                  "@context": "https://schema.org",
+                  "@type": "Person",
+                  "name": "Mulky Malikul Dhaher",
+                  "url": "https://mulkymalikuldhaher.com",
+                  "jobTitle": "System Builder & Software Engineer",
+                  "description": "Expert in Next.js, Glassmorphism, and modern web systems. Known for creative coding and high-performance system architecture.",
+                  "knowsAbout": ["Web Development", "Software Engineering", "System Architecture", "Next.js", "React", "UI/UX Design"],
+                  "sameAs": [
+                    "https://github.com/mulkymalikuldhrs",
+                    "https://instagram.com/mulkymalikuldhr"
+                  ],
+                  "nationality": {
+                    "@type": "Country",
+                    "name": "Indonesia"
+                  }
+                },
+                {
+                  "@context": "https://schema.org",
+                  "@type": "WebSite",
+                  "name": "Mulky Malikul Dhaher Portfolio",
+                  "url": "https://mulkymalikuldhaher.com",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://mulkymalikuldhaher.com/search?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
+                }
+              ])
+            }}
+          />
+        </head>
       <body className="antialiased min-h-screen relative overflow-x-hidden bg-background">
         <Script
           id="orchids-browser-logs"
