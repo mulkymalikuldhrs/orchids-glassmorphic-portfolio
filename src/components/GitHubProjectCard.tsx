@@ -51,15 +51,10 @@ export function GitHubProjectCard({
   topics,
   updatedAt,
   delay = 0,
-}: GitHubProjectProps) {
-  const { playClick, playHover } = useSoundEffects();
-  const formattedDate = new Date(updatedAt).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    year: "numeric",
-  });
+  }: GitHubProjectProps) {
+    const { playClick, playHover } = useSoundEffects();
 
-  return (
+    return (
     <GlassCard
       delay={delay}
       className="group relative flex flex-col h-full border-white/5 hover:border-white/10 transition-colors"
