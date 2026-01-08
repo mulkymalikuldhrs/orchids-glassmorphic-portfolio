@@ -45,24 +45,35 @@ export function AIPet({ isHero = false }: AIPetProps) {
     "A ripple in the interface."
   ];
 
-  const triggerBubble = useCallback(async (customMessage?: string) => {
-    // Probability check: 30% chance to speak unless forced
-    if (!customMessage && Math.random() > 0.3) return;
+  const triggerBubble = useCallback(async (context: string = "idle") => {
+    // Probability check: 30% chance to speak
+    if (Math.random() > 0.3) return;
 
-    const newMessage = customMessage || thoughts[Math.floor(Math.random() * thoughts.length)];
-    
-    // Simulate thinking delay (3-10 seconds as requested)
-    const delay = 3000 + Math.random() * 7000;
-    
-    setTimeout(() => {
-      setMessage(newMessage);
-      setShowBubble(true);
+    try {
+      // Simulate thinking delay (3-10 seconds as requested)
+      const delay = 3000 + Math.random() * 7000;
       
-      // Auto hide bubble
+      const response = await fetch("/api/betta", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ context }),
+      });
+      
+      const data = await response.json();
+      
       setTimeout(() => {
-        setShowBubble(false);
-      }, 5000);
-    }, delay);
+        setMessage(data.text);
+        if (data.state) setState(data.state as BettaState);
+        setShowBubble(true);
+        
+        // Auto hide bubble
+        setTimeout(() => {
+          setShowBubble(false);
+        }, 5000);
+      }, delay);
+    } catch (error) {
+      console.error("Betta failed to think:", error);
+    }
   }, []);
 
   const getRandomMovement = useCallback(() => {
