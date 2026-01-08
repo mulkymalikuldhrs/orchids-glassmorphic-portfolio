@@ -27,9 +27,10 @@ export function AICompanion() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [streamingText, setStreamingText] = useState("");
 
-  const thinkingSteps = language === 'en' 
-    ? ["Accessing logic nodes...", "Retrieving system context...", "Synthesizing response..."]
-    : ["Mengakses node logika...", "Mengambil konteks sistem...", "Mensintesis respons..."];
+    const thinkingSteps = language === 'en' 
+      ? ["Kernel check...", "Reading file system...", "Connecting to Betta_Core...", "Synthesizing..."]
+      : ["Pemeriksaan Kernel...", "Membaca sistem file...", "Menghubungkan ke Betta_Core...", "Mensintesis..."];
+
 
   // Update initial message when language changes
   useEffect(() => {
