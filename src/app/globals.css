@@ -57,30 +57,64 @@
   }
 }
 
-@layer utilities {
-  .glass {
-    @apply relative overflow-hidden;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(24px) saturate(180%);
-    -webkit-backdrop-filter: blur(24px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 
-      0 8px 32px 0 rgba(0, 0, 0, 0.3),
-      inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-  }
+  @layer utilities {
+    .glass {
+      @apply relative overflow-hidden;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 
+        0 20px 50px -10px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
+      transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
 
-  .glass::after {
-    content: "";
-    @apply absolute inset-0 opacity-[0.03] pointer-events-none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  }
-  
-  .light .glass {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
-  }
+    /* VisionOS Style - Thick Glass */
+    .glass-vision {
+      @apply relative overflow-hidden;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        rgba(255, 255, 255, 0.03) 100%
+      );
+      backdrop-filter: blur(60px) saturate(210%);
+      -webkit-backdrop-filter: blur(60px) saturate(210%);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 
+        0 30px 60px -12px rgba(0, 0, 0, 0.5),
+        inset 0 0.5px 0 0.5px rgba(255, 255, 255, 0.2),
+        inset 0 -0.5px 0 0.5px rgba(0, 0, 0, 0.1);
+    }
+
+    .glass-vision::before {
+      content: "";
+      @apply absolute inset-0 pointer-events-none;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.15) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(255, 255, 255, 0.05) 100%
+      );
+      z-index: 0;
+    }
+
+    .glass::after, .glass-vision::after {
+      content: "";
+      @apply absolute inset-0 opacity-[0.04] pointer-events-none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay;
+    }
+    
+    .light .glass, .light .glass-vision {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(30px) saturate(150%);
+    }
+
   
   .glass-dark {
     @apply relative overflow-hidden;
