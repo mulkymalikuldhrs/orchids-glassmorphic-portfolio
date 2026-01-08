@@ -105,17 +105,20 @@ export function GitHubProjectCard({
         </div>
       )}
 
-      <div className="flex items-center gap-4 text-white/40 text-xs mb-6">
-        <div className="flex items-center gap-1.5">
-          <Star className="w-3.5 h-3.5" />
-          <span>{stars}</span>
+        <div className="flex items-center gap-4 text-white/40 text-xs mb-6">
+          <div className="flex items-center gap-1.5" title="Stars">
+            <Star className="w-3.5 h-3.5" />
+            <span>{stars}</span>
+          </div>
+          <div className="flex items-center gap-1.5" title="Forks">
+            <GitFork className="w-3.5 h-3.5" />
+            <span>{forks}</span>
+          </div>
+          <div className="flex items-center gap-1.5 ml-auto animate-pulse text-primary/60">
+            <Code2 className="w-3 h-3" />
+            <span className="text-[9px] uppercase tracking-[0.2em] font-medium">Contribute</span>
+          </div>
         </div>
-        <div className="flex items-center gap-1.5">
-          <GitFork className="w-3.5 h-3.5" />
-          <span>{forks}</span>
-        </div>
-        <span className="ml-auto text-white/30">Updated {formattedDate}</span>
-      </div>
 
       <div className="mt-auto pt-4 border-t border-white/5 flex gap-4">
         <a

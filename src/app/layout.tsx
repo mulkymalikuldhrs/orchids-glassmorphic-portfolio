@@ -35,7 +35,11 @@ export const metadata: Metadata = {
       "Wiki",
       "Authority Site",
       "How to build systems",
-      "Mulky Malikul Dhaher Official"
+      "Mulky Malikul Dhaher Official",
+      "Open Source Contributor",
+      "GitHub Collaboration",
+      "Developer Community",
+      "Project Welcome"
     ],
     authors: [{ name: "Mulky Malikul Dhaher" }],
     manifest: "/site.webmanifest",
