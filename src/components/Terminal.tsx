@@ -14,7 +14,9 @@ interface CommandResponse {
 export function Terminal() {
   const { t, language } = useLanguage();
   const { playClick, playHover } = useSoundEffects();
-  const [history, setHistory] = useState<{ cmd: string; resp: CommandResponse }[]>([]);
+  const [history, setHistory] = useState<{ cmd: string; resp: CommandResponse }[]>([
+    { cmd: "system --boot", resp: { type: "success", content: language === 'en' ? "MULKY_OS_KERNEL Loaded." : "KERNEL_MULKY_OS Dimuat." } }
+  ]);
   const [input, setInput] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
