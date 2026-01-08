@@ -145,13 +145,19 @@ export default function ProjectsPage() {
           </p>
         </div>
       ) : (
-        <>
-          <div className="mb-6">
-            <span className="text-xs text-white/30 uppercase tracking-widest">
-              {repos.length} {language === "en" ? "repositories" : "repositori"}
-            </span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <>
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+              <span className="text-xs text-white/30 uppercase tracking-widest">
+                {repos.length} {language === "en" ? "repositories" : "repositori"}
+              </span>
+              <div className="flex items-center gap-2 px-3 py-1 glass rounded-full border-emerald-500/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[9px] uppercase tracking-[0.2em] text-emerald-400 font-bold">
+                  {language === "en" ? "All projects welcoming contributors" : "Semua proyek menerima kontributor"}
+                </span>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {repos.map((repo, index) => (
               <GitHubProjectCard
                 key={repo.id}
