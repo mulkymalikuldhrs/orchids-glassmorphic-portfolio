@@ -6,6 +6,7 @@ import { ArrowRight, Github, Instagram, Mail } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/hooks/useLanguage";
 import { useSoundEffects } from "@/hooks/useSoundEffects";
+import { AIPet } from "@/components/AIPet";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -13,38 +14,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[85vh] px-6 text-center">
-      {/* Hero Visual Element */}
-      <div className="relative w-48 h-48 sm:w-64 sm:h-64 mb-8 sm:mb-12 flex items-center justify-center">
-        <motion.div
-          animate={{
-            rotate: 360,
-            borderRadius: ["40% 60% 70% 30% / 40% 50% 60% 70%", "60% 40% 30% 70% / 50% 60% 70% 40%", "40% 60% 70% 30% / 40% 50% 60% 70%"],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{ willChange: "transform, border-radius" }}
-          className="absolute inset-0 border border-white/10 bg-gradient-to-br from-primary/10 to-transparent blur-sm"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          style={{ willChange: "transform, opacity" }}
-          className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-primary/20 blur-2xl"
-        />
-        <div className="relative z-10 glass-dark w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center border border-white/10">
-          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/20 animate-slow-spin" />
-        </div>
-      </div>
+      {/* Hero Visual Element - Upgraded AI Robot */}
+      <AIPet isHero />
 
       <motion.div
         initial={{ opacity: 0, y: 15 }}
