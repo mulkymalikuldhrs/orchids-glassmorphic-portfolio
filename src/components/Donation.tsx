@@ -17,7 +17,7 @@ export function Donation() {
     setTimeout(() => setCopied(null), 2000);
   };
 
-  const donationMethods = [
+    const donationMethods = [
     {
       id: "visa",
       name: "Visa / Mastercard / Online",
@@ -25,7 +25,8 @@ export function Donation() {
       number: "4889501088363267",
       holder: "Mulky Malikul Dhaher",
       icon: <CreditCard className="w-5 h-5" />,
-      color: "from-blue-500 to-cyan-500"
+      color: "from-[#FF4B2B] to-[#FF416C]",
+      logo: "VISA / MASTERCARD"
     },
     {
       id: "bsi",
@@ -34,7 +35,8 @@ export function Donation() {
       number: "1055129734",
       holder: "Mulky Malikul Dhaher",
       icon: <Info className="w-5 h-5" />,
-      color: "from-emerald-500 to-teal-500"
+      color: "from-[#00A39E] to-[#006663]",
+      logo: "BSI"
     }
   ];
 
@@ -98,19 +100,24 @@ export function Donation() {
                     >
                       <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${method.color} opacity-5 blur-2xl group-hover:opacity-10 transition-opacity`} />
                       
-                      <div className="relative flex items-center gap-4 mb-4">
-                        <div className={`p-3 rounded-2xl bg-gradient-to-br ${method.color} text-white`}>
-                          {method.icon}
+                      <div className="relative flex items-center justify-between gap-4 mb-4">
+                        <div className="flex items-center gap-4">
+                          <div className={`p-3 rounded-2xl bg-gradient-to-br ${method.color} text-white shadow-lg`}>
+                            {method.icon}
+                          </div>
+                          <div>
+                            <p className="text-[10px] text-white/40 uppercase tracking-widest">{method.bank}</p>
+                            <h3 className="font-semibold text-white">{method.name}</h3>
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-[10px] text-white/40 uppercase tracking-widest">{method.bank}</p>
-                          <h3 className="font-semibold text-white">{method.name}</h3>
+                        <div className="px-3 py-1 glass-dark rounded-lg text-[9px] font-bold tracking-tighter text-white/40 border border-white/5 uppercase">
+                          {method.logo}
                         </div>
                       </div>
 
-                      <div className="relative flex items-center justify-between p-4 bg-black/20 rounded-2xl border border-white/5">
+                      <div className="relative flex items-center justify-between p-4 bg-black/40 rounded-2xl border border-white/5 group-hover:bg-black/60 transition-colors">
                         <div className="overflow-hidden mr-4">
-                          <p className="text-xs text-white/30 mb-1">Account Number</p>
+                          <p className="text-[9px] text-white/30 uppercase tracking-[0.2em] mb-1">Account Number</p>
                           <p className="font-mono text-sm tracking-wider text-white truncate">{method.number}</p>
                         </div>
                         <button
@@ -121,9 +128,11 @@ export function Donation() {
                         </button>
                       </div>
                       
-                      <div className="mt-4 flex items-center gap-2 px-1">
-                         <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-                         <p className="text-[10px] text-white/40 uppercase tracking-widest">{method.holder}</p>
+                      <div className="mt-4 flex items-center justify-between px-1">
+                         <div className="flex items-center gap-2">
+                           <div className="w-1.5 h-1.5 rounded-full bg-primary/40" />
+                           <p className="text-[10px] text-white/40 uppercase tracking-widest">{method.holder}</p>
+                         </div>
                       </div>
                     </div>
                   ))}
