@@ -62,60 +62,18 @@ export function AIPet() {
 
   useEffect(() => {
     const moveInterval = setInterval(() => {
-      if (Math.random() > 0.3) {
+      if (Math.random() > 0.4) {
         const nextPos = getRandomMovement();
         setDirection(nextPos.x > position.x ? 1 : -1);
         setPosition(nextPos);
       }
-      if (Math.random() > 0.6) {
+      if (Math.random() > 0.7) {
         triggerReaction();
       }
-    }, 6000);
+    }, 4000); // Faster checks for more dynamic movement
 
     return () => clearInterval(moveInterval);
   }, [getRandomMovement, triggerReaction, position.x]);
-
-  const getEyes = () => {
-    switch (emotion) {
-      case "happy":
-        return (
-          <g transform="translate(45, 25)">
-            <motion.circle animate={{ scaleY: [1, 0.2, 1] }} transition={{ repeat: Infinity, duration: 3 }} r="2" fill="black" />
-          </g>
-        );
-      case "sleepy":
-        return (
-          <g transform="translate(45, 25)">
-            <line x1="-2" y1="0" x2="2" y2="0" stroke="black" strokeWidth="1" />
-          </g>
-        );
-      case "excited":
-        return (
-          <g transform="translate(45, 25)">
-            <motion.circle animate={{ scale: [1, 1.3, 1] }} transition={{ repeat: Infinity, duration: 0.5 }} r="2.5" fill="black" />
-          </g>
-        );
-      case "curious":
-        return (
-          <g transform="translate(45, 25)">
-            <motion.circle animate={{ x: [-0.5, 0.5, -0.5] }} transition={{ repeat: Infinity, duration: 1 }} r="2" fill="black" />
-          </g>
-        );
-      case "thinking":
-        return (
-          <g transform="translate(45, 25)">
-            <motion.path 
-              animate={{ rotate: [0, 360] }} 
-              transition={{ repeat: Infinity, duration: 2 }} 
-              d="M -2,0 A 2,2 0 1,1 2,0" 
-              fill="none" 
-              stroke="black" 
-              strokeWidth="1" 
-            />
-          </g>
-        );
-    }
-  };
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[9999]">
@@ -148,100 +106,69 @@ export function AIPet() {
           )}
         </AnimatePresence>
 
-        {/* Betta Fish SVG */}
+        {/* Realistic Betta Fish */}
         <motion.div
           animate={{
-            y: [0, -5, 0],
-            rotate: direction === -1 ? [0, 2, -2, 0] : [0, -2, 2, 0],
-            scaleX: direction,
+            y: [0, -8, 0],
+            rotate: direction === -1 ? [0, 1, -1, 0] : [0, -1, 1, 0],
+            scaleX: direction * 1.2,
+            scaleY: 1.2,
           }}
           transition={{
-            duration: 4,
+            duration: 5,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="relative w-20 h-20"
+          className="relative w-32 h-32 flex items-center justify-center"
         >
-          <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-2xl">
-            {/* Back Fin (Tail) */}
+          {/* Main Fish Image */}
+          <motion.img
+            src="https://www.freeiconspng.com/uploads/betta-fish-png-15.png"
+            alt="Real Betta Fish"
+            className="w-full h-full object-contain drop-shadow-[0_10px_20px_rgba(236,72,153,0.3)] filter brightness-110 contrast-110"
+            animate={{
+              filter: emotion === "excited" 
+                ? ["brightness(1.1) contrast(1.1)", "brightness(1.4) contrast(1.3)", "brightness(1.1) contrast(1.1)"]
+                : "brightness(1.1) contrast(1.1)"
+            }}
+            transition={{ duration: 0.5 }}
+          />
+
+          {/* Realistic Fins Overlay (SVG for "5D" flow) */}
+          <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full pointer-events-none mix-blend-screen opacity-30">
             <motion.path
               animate={{
                 d: [
-                  "M 30,50 Q 0,20 0,50 Q 0,80 30,50",
-                  "M 30,50 Q -5,10 0,50 Q -5,90 30,50",
-                  "M 30,50 Q 0,20 0,50 Q 0,80 30,50"
+                  "M 30,50 Q 10,20 5,50 Q 10,80 30,50",
+                  "M 30,50 Q 5,15 0,50 Q 5,85 30,50",
+                  "M 30,50 Q 10,20 5,50 Q 10,80 30,50"
                 ]
               }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              fill="url(#finGradient)"
-              className="opacity-80"
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              fill="url(#finFlowGradient)"
             />
-            
-            {/* Top Fin */}
-            <motion.path
-              animate={{
-                d: [
-                  "M 40,40 Q 50,10 70,40",
-                  "M 40,40 Q 55,5 75,40",
-                  "M 40,40 Q 50,10 70,40"
-                ]
-              }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-              fill="url(#finGradient)"
-              className="opacity-70"
-            />
-
-            {/* Bottom Fin */}
-            <motion.path
-              animate={{
-                d: [
-                  "M 40,60 Q 50,90 70,60",
-                  "M 40,60 Q 55,95 75,60",
-                  "M 40,60 Q 50,90 70,60"
-                ]
-              }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-              fill="url(#finGradient)"
-              className="opacity-70"
-            />
-
-            {/* Body */}
-            <path
-              d="M 30,50 C 40,35 70,35 80,50 C 70,65 40,65 30,50"
-              fill="url(#bodyGradient)"
-              stroke="white"
-              strokeWidth="0.5"
-              className="glass"
-            />
-
-            {/* Pectoral Fin (Side) */}
-            <motion.path
-              animate={{
-                rotate: [-10, 20, -10]
-              }}
-              style={{ transformOrigin: "50px 55px" }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              d="M 50,55 Q 40,65 50,70"
-              fill="white"
-              fillOpacity="0.4"
-            />
-
-            {/* Eyes */}
-            {getEyes()}
-
-            {/* Definitions */}
             <defs>
-              <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#ec4899" stopOpacity="0.8" />
-              </linearGradient>
-              <linearGradient id="finGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#ec4899" stopOpacity="0.4" />
+              <linearGradient id="finFlowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#ec4899" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0" />
               </linearGradient>
             </defs>
           </svg>
+
+          {/* Water Ripples (5D Effect) */}
+          <motion.div
+            animate={{
+              scale: [1, 1.5],
+              opacity: [0.3, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: "easeOut",
+            }}
+            className="absolute inset-0 border border-white/20 rounded-full blur-sm"
+          />
+
 
           {/* Bubbles */}
           <AnimatePresence>
