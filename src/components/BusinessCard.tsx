@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -54,14 +55,14 @@ export function BusinessCard() {
       ctx.fillStyle = '#00a3ff'; // Primary color
       ctx.font = 'italic 24px sans-serif';
       ctx.letterSpacing = '4px';
-      ctx.fillText('SYSTEM BUILDER • SOFTWARE ENGINEER', 60, 170);
+      ctx.fillText('MAINTENANCE ENGINEER • SYSTEM BUILDER', 60, 170);
 
       // 6. Contact Info
       ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
       ctx.font = '28px sans-serif';
       ctx.fillText('mulkymalikuldhr@mail.com', 100, 300);
       ctx.fillText('mulkymalikuldhr.dev', 100, 360);
-      ctx.fillText('Aceh, Indonesia', 100, 420);
+      ctx.fillText('Lhokseumawe, Aceh', 100, 420);
 
       // Simulating icons (dots)
       ctx.fillStyle = '#00a3ff';
@@ -118,7 +119,7 @@ export function BusinessCard() {
             Mulky Malikul Dhaher
           </h3>
           <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-primary font-semibold">
-            System Builder • Software Engineer
+            Maintenance Engineer • System Builder
           </p>
         </div>
 
@@ -133,7 +134,7 @@ export function BusinessCard() {
           </div>
           <div className="flex items-center gap-2 text-white/60">
             <MapPin className="w-3 h-3" />
-            <span className="text-[10px] sm:text-xs font-light">Aceh, Indonesia</span>
+            <span className="text-[10px] sm:text-xs font-light">Lhokseumawe, Aceh</span>
           </div>
         </div>
 
