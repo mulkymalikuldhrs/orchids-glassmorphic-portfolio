@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { GlassCard } from "@/components/GlassCard";
+import { BusinessCard } from "@/components/BusinessCard";
 import { Lock, ArrowRight, Mail, Instagram, Github } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -52,10 +53,12 @@ export default function AboutPage() {
                 {t.about.interests_desc}
               </p>
             </GlassCard>
-          </div>
+            </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
+            <BusinessCard />
+
+            <motion.div
+              initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
             className="pt-10 sm:pt-12 border-t border-white/5 flex flex-col md:flex-row gap-6 sm:gap-8 items-start md:items-center justify-between"
