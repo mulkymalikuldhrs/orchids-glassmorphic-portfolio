@@ -96,6 +96,16 @@ export function Terminal() {
       echo: (args) => ({
         type: "text",
         content: args.join(" ")
+      }),
+      logs: () => ({
+        type: "list",
+        content: [
+          "[INFO] Booting Mulky_OS Aceh-Subtle-v2...",
+          "[OK] Betta_Core initialized.",
+          "[OK] Glassmorphic UI Engine active.",
+          "[WARN] High traffic detected from Instagram referral.",
+          "[INFO] Memory cleanup complete. 2.4GB free."
+        ]
       })
     };
 
