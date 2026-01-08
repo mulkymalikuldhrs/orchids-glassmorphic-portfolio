@@ -26,8 +26,13 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 sm:p-6 pointer-events-none">
-      <div className="flex flex-col sm:flex-row items-center gap-4 pointer-events-auto">
-        <div className="glass px-1 py-1 sm:px-2 sm:py-2 rounded-full flex items-center gap-0.5 sm:gap-1 overflow-x-auto no-scrollbar max-w-[95vw]">
+      <motion.div 
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="flex flex-col sm:flex-row items-center gap-4 pointer-events-auto"
+      >
+        <div className="glass-vision px-1.5 py-1.5 sm:px-2.5 sm:py-2.5 rounded-full flex items-center gap-1 overflow-x-auto no-scrollbar max-w-[95vw] shadow-2xl">
           {navItems.map((item) => {
             const isActive = pathname === item.path;
             const name = t.nav[item.nameKey as keyof typeof t.nav];
@@ -38,24 +43,24 @@ export function Navbar() {
                 onClick={playClick}
                 onMouseEnter={playHover}
                 className={cn(
-                  "relative px-3 sm:px-4 py-1.5 text-xs sm:text-sm transition-colors rounded-full font-light whitespace-nowrap",
+                  "relative px-4 sm:px-6 py-2 text-xs sm:text-sm transition-all duration-300 rounded-full font-medium whitespace-nowrap",
                   isActive 
                     ? theme === 'dark' ? "text-white" : "text-gray-900" 
-                    : theme === 'dark' ? "text-white/40 hover:text-white/70" : "text-gray-600 hover:text-gray-900"
+                    : theme === 'dark' ? "text-white/40 hover:text-white/80" : "text-gray-500 hover:text-gray-900"
                 )}
               >
                   {isActive && (
                     <motion.div
                       layoutId="nav-pill"
                       className={cn(
-                        "absolute inset-0 rounded-full",
-                        theme === 'dark' ? "bg-white/10" : "bg-black/10"
+                        "absolute inset-0 rounded-full shadow-lg",
+                        theme === 'dark' ? "bg-white/15" : "bg-black/10"
                       )}
                       transition={{ 
                         type: "spring", 
-                        bounce: 0.15, 
-                        duration: 0.5,
-                        layout: { duration: 0.3 } 
+                        bounce: 0.2, 
+                        duration: 0.6,
+                        layout: { duration: 0.4 } 
                       }}
                       style={{ willChange: "transform, opacity" }}
                     />
@@ -65,11 +70,11 @@ export function Navbar() {
             );
           })}
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <ThemeSwitcher />
           <LanguageSwitcher />
         </div>
-      </div>
+      </motion.div>
     </nav>
   );
 }
