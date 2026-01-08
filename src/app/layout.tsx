@@ -88,7 +88,7 @@ export default function RootLayout({
       <body className="antialiased min-h-screen relative overflow-x-hidden bg-background">
         <Script
           id="orchids-browser-logs"
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
+          src="https://huuuiecurrrylshywheo.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
           strategy="afterInteractive"
           data-orchids-project-id="5fe886a9-3e99-4faa-b7d5-8e128951ffb5"
         />
