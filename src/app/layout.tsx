@@ -143,11 +143,14 @@ export const metadata: Metadata = {
             <div className="absolute bottom-[10%] right-[5%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[150px] animate-float" style={{ animationDelay: '-5s' }} />
           </div>
 
-          <Navbar />
-          
-          <main className="relative pt-20">
-            {children}
-          </main>
+            <Navbar />
+            
+            <main className="relative pt-20">
+              {children}
+            </main>
+
+            <Donation />
+
 
             <footer className="py-12 sm:py-20 px-6 border-t border-white/5 bg-black/20">
               <div className="container mx-auto flex flex-col items-center gap-8 sm:gap-12">
