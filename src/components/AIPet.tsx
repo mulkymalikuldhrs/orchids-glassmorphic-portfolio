@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { Waves } from "lucide-react";
+import { Waves, Droplets } from "lucide-react";
 
 type BettaState = "idle" | "curious" | "alert" | "resting";
 
@@ -31,19 +31,6 @@ export function AIPet({ isHero = false }: AIPetProps) {
   const springConfig = { damping: 30, stiffness: 100 };
   const rotateX = useSpring(useTransform(mouseY, [-300, 300], [10, -10]), springConfig);
   const rotateY = useSpring(useTransform(mouseX, [-300, 300], [-10, 10]), springConfig);
-
-  const thoughts = [
-    "The water is calm today.",
-    "Some things move without noise.",
-    "Still thinking.",
-    "Waiting is also motion.",
-    "Depth matters more than speed.",
-    "Silence has a texture.",
-    "Observing the flow.",
-    "Minimalism is the highest depth.",
-    "Systems drifting in the dark.",
-    "A ripple in the interface."
-  ];
 
   const triggerBubble = useCallback(async (context: string = "idle") => {
     // Probability check: 30% chance to speak
