@@ -12,21 +12,21 @@ export const translations = {
     },
     home: {
       hero_sub: "Building systems, not noise.",
-      skills: "Beginner in FX Markets · AI Agent Enthusiasm · Decision Logic",
+      skills: "Technical Maintenance · Multimedia Design · AI & Web3 Enthusiast",
       philosophy: "Solo. Deliberate. Long-term.",
       cta: "Talk to Mulky (AI)",
     },
     about: {
       title: "About",
       description1: "I work on systems.",
-      description1_sub: "Sometimes software. Sometimes markets. Sometimes just thinking clearly.",
-      description2: "I don’t move fast.",
-      description2_sub: "I move deliberately.",
-      description3: "Building for the long term requires a certain kind of restraint. In a world of noise, I choose to build gravity fields—nodes where logic and systems meet human intent.",
+      description1_sub: "Bridging the gap between industrial systems and digital intelligence.",
+      description2: "I work with precision.",
+      description2_sub: "From high-pressure industrial panels to the logic of AI agents.",
+      description3: "Building for the long term requires a certain kind of restraint. With over 3 years in industrial operations and a background in multimedia, I choose to build gravity fields—nodes where logic and systems meet human intent.",
       philosophy_title: "Philosophy",
       philosophy_desc: "Aceh Subtle: Tenang, keras di dalam. Futuristic restraint in every interaction and every line of code.",
       interests_title: "Interests",
-      interests_desc: "Decision Logic, AI Agent Swarms, Quantitative FX Trading, and System Thinking.",
+      interests_desc: "Web3, AI, Technical Maintenance, Multimedia Design, and Industrial Systems.",
       view_path: "View Professional Path",
     },
     projects: {
@@ -43,12 +43,12 @@ export const translations = {
           category: "Live",
         },
         {
-          title: "FX Agent Pro",
-          description: "Quantitative trading agent designed for the FX markets with a focus on risk management.",
-          problem: "Market noise overwhelms standard technical indicators.",
-          whyInteresting: "Implements proprietary decision logic to filter high-probability setups.",
-          status: "WIP / Alpha Testing",
-          category: "In Progress",
+          title: "Industrial Logic Monitor",
+          description: "Conceptual dashboard for monitoring industrial panel efficiency using AI-driven insights.",
+          problem: "Manual monitoring of high-pressure systems is prone to human error.",
+          whyInteresting: "Blends maintenance engineering experience with modern data visualization.",
+          status: "Conceptual / Research",
+          category: "Conceptual",
         },
         {
           title: "Aceh Subtle Design",
@@ -70,9 +70,9 @@ export const translations = {
           content: "Building systems that attract the right people (gravity) is 10x more effective than shouting to find anyone (noise).",
         },
         {
-          title: "Decision Logic Layer",
+          title: "Maintenance Mindset",
           type: "Framework",
-          content: "Separate the intent from the execution. Let the agent handle the 'how', but the human defines the 'why' through rigid system constraints.",
+          content: "Prevention is better than cure. This applies to industrial machinery, software architecture, and personal growth.",
         },
         {
           title: "Solo Builder System",
@@ -94,35 +94,35 @@ export const translations = {
       ai: {
         title: "AI Companion",
         subtitle: "Not a cheesy chatbot. A digital companion & interpreter to understand Mulky's way of thinking.",
-        placeholder: "Ask about methodology, projects, or market logic...",
+        placeholder: "Ask about methodology, projects, or background...",
         disclaimer: "Artificial Intelligence. Response may vary.",
         inputLabel: "Message Mulky's AI",
-        initialMessage: "I am Mulky's AI Companion. I don't sell anything. I honestly explain Mulky's thinking, projects, and life direction. What would you like to know?",
+        initialMessage: "I am Mulky's AI Companion. I honestly explain Mulky's thinking, industrial background, and life direction. What would you like to know?",
         defaultResponse: "I need a moment to reflect on that. Generally, Mulky always prioritizes systems and long-term logic over momentary trends.",
         knowledge: [
           {
             keywords: ["who", "mulky", "identity"],
-            response: "Mulky is a system builder, not a noise maker. He focuses on decision logic, FX markets, and AI agent development with a long-term approach."
+            response: "Mulky is a maintenance engineer and system builder from Aceh. He has over 3 years of experience in industrial operations and a strong background in multimedia and IT."
           },
           {
-            keywords: ["project", "work", "doing"],
-            response: "Currently, Mulky is exploring Quantitative Trading and Decision Logic. You can see his projects in the Projects section, divided into Live, In Progress, and Conceptual."
+            keywords: ["experience", "work", "job"],
+            response: "Mulky currently works as a Maintenance Technician & Panel Operator at PT Yoga Wibawa Mandiri (Packing Plant Semen Padang). He previously worked in freight administration and customer service in Malaysia."
           },
           {
             keywords: ["aceh", "origin"],
-            response: "Mulky is from Aceh. The philosophy of 'Aceh Subtle'—calm on the outside, hard on the inside—is the foundation of his work: futuristic restraint."
+            response: "Mulky is from Lhokseumawe, Aceh. The philosophy of 'Aceh Subtle'—calm on the outside, hard on the inside—is the foundation of his work: futuristic restraint."
           },
           {
-            keywords: ["fx", "market", "trading"],
-            response: "In FX, Mulky looks for logic, not luck. He develops agents that process market data through rigid risk-management filters."
+            keywords: ["skills", "technical", "stack"],
+            response: "His skills range from industrial maintenance and troubleshooting to multimedia design (Adobe Creative Suite) and IT systems (Linux, Ethical Hacking)."
           },
           {
             keywords: ["contact", "email", "instagram", "github"],
             response: "You can find Mulky on GitHub (@mulkymalikuldhrs), Instagram (@mulkymalikuldhr), or reach out via email at mulkymalikuldhr@mail.com."
           },
           {
-            keywords: ["stack", "tech", "build"],
-            response: "Mulky builds with Next.js, TypeScript, Tailwind, and Supabase. He prefers tools that offer high speed without sacrificing system integrity."
+            keywords: ["education", "study"],
+            response: "Mulky studied Multimedia at SMK Negeri 2 Lhokseumawe and previously pursued Electrical Engineering at Universitas Malikussaleh."
           }
         ]
       }
@@ -137,21 +137,21 @@ export const translations = {
       },
       home: {
         hero_sub: "Membangun sistem, bukan kebisingan.",
-        skills: "Pemula di Pasar FX · Antusiasme AI Agent · Logika Keputusan",
+        skills: "Pemeliharaan Teknis · Desain Multimedia · Antusias AI & Web3",
         philosophy: "Solo. Terukur. Jangka panjang.",
         cta: "Bicara dengan Mulky (AI)",
       },
       about: {
         title: "Tentang",
         description1: "Saya bekerja pada sistem.",
-        description1_sub: "Terkadang perangkat lunak. Terkadang pasar. Terkadang hanya berpikir jernih.",
-        description2: "Saya tidak bergerak cepat.",
-        description2_sub: "Saya bergerak dengan terukur.",
-        description3: "Membangun untuk jangka panjang membutuhkan semacam pengendalian diri. Di dunia yang penuh kebisingan, saya memilih untuk membangun medan gravitasi—titik temu antara logika dan sistem dengan niat manusia.",
+        description1_sub: "Menjembatani celah antara sistem industri dan kecerdasan digital.",
+        description2: "Saya bekerja dengan presisi.",
+        description2_sub: "Dari panel industri tekanan tinggi hingga logika agen AI.",
+        description3: "Membangun untuk jangka panjang membutuhkan semacam pengendalian diri. Dengan pengalaman lebih dari 3 tahun di operasional industri dan latar belakang multimedia, saya memilih membangun medan gravitasi—titik temu antara logika dan sistem dengan niat manusia.",
         philosophy_title: "Filosofi",
         philosophy_desc: "Aceh Subtle: Tenang, keras di dalam. Pengendalian diri futuristik dalam setiap interaksi dan setiap baris kode.",
         interests_title: "Minat",
-        interests_desc: "Logika Keputusan, AI Agent Swarms, Perdagangan FX Kuantitatif, dan Pemikiran Sistem.",
+        interests_desc: "Web3, AI, Pemeliharaan Teknis, Desain Multimedia, dan Sistem Industri.",
         view_path: "Lihat Jalur Profesional",
       },
       projects: {
@@ -168,12 +168,12 @@ export const translations = {
             category: "Live",
           },
           {
-            title: "FX Agent Pro",
-            description: "Agen perdagangan kuantitatif yang dirancang untuk pasar FX dengan fokus pada manajemen risiko.",
-            problem: "Kebisingan pasar mengalahkan indikator teknis standar.",
-            whyInteresting: "Mengimplementasikan logika keputusan eksklusif untuk menyaring pengaturan probabilitas tinggi.",
-            status: "WIP / Pengujian Alpha",
-            category: "In Progress",
+            title: "Industrial Logic Monitor",
+            description: "Dashboard konseptual untuk memantau efisiensi panel industri menggunakan wawasan berbasis AI.",
+            problem: "Pemantauan manual sistem tekanan tinggi rentan terhadap kesalahan manusia.",
+            whyInteresting: "Memadukan pengalaman pemeliharaan teknik dengan visualisasi data modern.",
+            status: "Konseptual / Riset",
+            category: "Conceptual",
           },
           {
             title: "Aceh Subtle Design",
@@ -195,9 +195,9 @@ export const translations = {
             content: "Membangun sistem yang menarik orang yang tepat (gravitasi) 10x lebih efektif daripada berteriak untuk menemukan siapa pun (kebisingan).",
           },
           {
-            title: "Lapisan Logika Keputusan",
+            title: "Mindset Pemeliharaan",
             type: "Kerangka Kerja",
-            content: "Pisahkan niat dari eksekusi. Biarkan agen menangani 'bagaimana', tetapi manusia menentukan 'mengapa' melalui batasan sistem yang kaku.",
+            content: "Mencegah lebih baik daripada mengobati. Ini berlaku untuk mesin industri, arsitektur perangkat lunak, dan pertumbuhan pribadi.",
           },
           {
             title: "Sistem Solo Builder",
@@ -219,38 +219,37 @@ export const translations = {
       ai: {
         title: "Pendamping AI",
         subtitle: "Bukan chatbot norak. Digital companion & interpreter untuk memahami cara berpikir Mulky.",
-        placeholder: "Tanyakan tentang sistem atau visi Mulky...",
+        placeholder: "Tanyakan tentang latar belakang atau visi Mulky...",
         disclaimer: "Kecerdasan Buatan. Respons mungkin bervariasi.",
         inputLabel: "Pesan AI Mulky",
-        initialMessage: "Aku adalah AI Companion Mulky. Aku tidak menjual apa pun. Aku menjelaskan cara berpikir, proyek, dan arah hidup Mulky dengan jujur. Apa yang ingin kamu ketahui?",
+        initialMessage: "Aku adalah AI Companion Mulky. Aku menjelaskan latar belakang industri, cara berpikir, dan arah hidup Mulky dengan jujur. Apa yang ingin kamu ketahui?",
         defaultResponse: "Aku butuh waktu untuk merenungkan itu. Secara umum, Mulky selalu mengedepankan sistem dan logika jangka panjang daripada tren sesaat.",
         knowledge: [
           {
             keywords: ["siapa", "mulky", "identitas"],
-            response: "Mulky adalah seorang pembangun sistem, bukan pembuat kebisingan. Ia fokus pada logika keputusan, pasar FX, dan pengembangan agen AI dengan pendekatan jangka panjang."
+            response: "Mulky adalah seorang teknisi pemeliharaan dan pembangun sistem dari Aceh. Ia memiliki pengalaman lebih dari 3 tahun di operasional industri dan latar belakang kuat di multimedia serta IT."
           },
           {
-            keywords: ["proyek", "kerjaan", "ngapain"],
-            response: "Saat ini Mulky sedang mengeksplorasi Quantitative Trading dan Decision Logic. Proyek-proyeknya bisa kamu lihat di bagian Projects, yang dibagi menjadi Live, In Progress, dan Konseptual."
+            keywords: ["pengalaman", "kerja", "kerjaan"],
+            response: "Mulky saat ini bekerja sebagai Teknisi Pemeliharaan & Operator Panel di PT Yoga Wibawa Mandiri (Packing Plant Semen Padang). Sebelumnya ia bekerja di administrasi pengangkutan dan layanan pelanggan di Malaysia."
           },
           {
             keywords: ["aceh", "asal"],
-            response: "Mulky berasal dari Aceh. Filosofi 'Aceh Subtle'—tenang di luar, keras di dalam—menjadi landasan karyanya: futuristic restraint."
+            response: "Mulky berasal dari Lhokseumawe, Aceh. Filosofi 'Aceh Subtle'—tenang di luar, keras di dalam—menjadi landasan karyanya: futuristic restraint."
           },
           {
-            keywords: ["fx", "pasar", "trading", "dagang"],
-            response: "Di FX, Mulky mencari logika, bukan keberuntungan. Ia mengembangkan agen yang memproses data pasar melalui filter manajemen risiko yang kaku."
+            keywords: ["skill", "keahlian", "teknis"],
+            response: "Keahliannya mencakup pemeliharaan industri dan pemecahan masalah hingga desain multimedia (Adobe Creative Suite) dan sistem IT (Linux, Ethical Hacking)."
           },
           {
             keywords: ["kontak", "email", "instagram", "github"],
             response: "Kamu bisa menemukan Mulky di GitHub (@mulkymalikuldhrs), Instagram (@mulkymalikuldhr), atau hubungi melalui email di mulkymalikuldhr@mail.com."
           },
           {
-            keywords: ["stack", "teknologi", "bangun"],
-            response: "Mulky membangun dengan Next.js, TypeScript, Tailwind, dan Supabase. Ia lebih memilih alat yang menawarkan kecepatan tinggi tanpa mengorbankan integritas sistem."
+            keywords: ["pendidikan", "sekolah", "kuliah"],
+            response: "Mulky menempuh pendidikan Multimedia di SMK Negeri 2 Lhokseumawe dan sebelumnya sempat menempuh Teknik Elektro di Universitas Malikussaleh."
           }
         ]
       }
-
-  }
+    }
 };
