@@ -1,26 +1,28 @@
 # Orchids Glassmorphic Portfolio
 
-A modern, interactive, and high-performance portfolio built with Next.js 15, Framer Motion, and Tailwind CSS. Featuring a unique glassmorphic design and an AI companion.
+A modern, interactive, and high-performance portfolio built with Next.js 15, Framer Motion, and Tailwind CSS. Featuring a unique glassmorphic design and an AI-driven OS experience.
 
 ## ✨ Features
 
-- **Glassmorphic UI**: High-end visual design with real-time blur and frosted glass effects.
-- **AI Companion (AIPet)**: An interactive, cute AI resident that moves across your screen and reacts to visitor interactions.
+- **Mulky OS (AI Terminal)**: An interactive web-based terminal experience with a custom kernel, real-time system monitoring, and file system simulation.
+- **Glassmorphic UI**: High-end visual design with real-time blur and frosted glass effects using Tailwind CSS 4.
+- **AI Companion (AIPet)**: An interactive, cute AI resident with "Floating Brain" logic that reacts to visitor interactions.
+- **Stripe Integration**: Secure payment processing for premium content access (e.g., Resume access).
+- **GitHub API Integration**: Real-time project showcase synced directly with GitHub repositories.
 - **Multi-language Support**: Built-in support for Indonesian (ID) and English (EN).
-- **SEO Optimized**: Advanced SEO configuration including JSON-LD, sitemaps, and optimized metadata for maximum search engine visibility.
-- **Interactive Thinking Space**: A section dedicated to insights, thoughts, and professional reflections.
-- **Sound Effects**: Immersive interaction sounds for clicks and hovers.
-- **Visitor Tracking**: Integrated analytics to understand visitor engagement.
+- **SEO Optimized**: Advanced SEO configuration including JSON-LD, sitemaps, and optimized metadata.
+- **Visitor Tracking**: Integrated analytics with Supabase to understand visitor engagement.
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewing.
 
 ## 🚀 Tech Stack
 
-- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Framework**: [Next.js 15](https://nextjs.org/) (Turbopack)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Payments**: [Stripe](https://stripe.com/)
+- **Database/Auth**: [Supabase](https://supabase.com/)
 - **Icons**: [Lucide React](https://lucide.dev/)
-- **Database**: [Supabase](https://supabase.com/)
-- **Type Checking**: TypeScript
+- **Deployment**: [Vercel](https://vercel.com/)
 
 ## 🛠️ Getting Started
 
@@ -35,7 +37,7 @@ A modern, interactive, and high-performance portfolio built with Next.js 15, Fra
    ```
 
 3. **Set up Environment Variables**:
-   Create a `.env` file based on your Supabase credentials.
+   Create a `.env` file based on your Supabase and Stripe credentials.
 
 4. **Run the development server**:
    ```bash
