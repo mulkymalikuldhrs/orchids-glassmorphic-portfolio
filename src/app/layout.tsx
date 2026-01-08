@@ -4,6 +4,7 @@ import { VisualEditsMessenger } from "orchids-visual-edits";
 import { VisitorTracker } from "@/components/VisitorTracker";
 import { Navbar } from "@/components/Navbar";
 import { ClientProviders } from "@/components/ClientProviders";
+import { AIPet } from "@/components/AIPet";
 
 export const metadata: Metadata = {
   title: "Mulky Malikul Dhaher",
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="antialiased min-h-screen relative overflow-x-hidden bg-background">
-        <ClientProviders>
-          <VisitorTracker />
-          
-          {/* Background Atmosphere */}
+          <ClientProviders>
+            <VisitorTracker />
+            <AIPet />
+            
+            {/* Background Atmosphere */}
+
           <div className="fixed inset-0 -z-10 pointer-events-none">
             <div className="absolute top-[10%] left-[5%] w-[30%] h-[30%] rounded-full bg-primary/5 blur-[120px] animate-float" />
             <div className="absolute bottom-[10%] right-[5%] w-[40%] h-[40%] rounded-full bg-primary/5 blur-[150px] animate-float" style={{ animationDelay: '-5s' }} />
