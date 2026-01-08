@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { ExternalLink, Github, Star, GitFork, Code2 } from "lucide-react";
 import { GlassCard } from "./GlassCard";
 import { useSoundEffects } from "@/hooks/useSoundEffects";
