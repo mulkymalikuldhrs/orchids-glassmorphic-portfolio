@@ -25,6 +25,7 @@
   --card: oklch(1 0 0 / 3%);
   --card-foreground: oklch(0.92 0.01 240);
   --primary: oklch(0.4 0.1 260);
+  --primary-rgb: 64, 128, 255;
   --border: oklch(1 0 0 / 8%);
 }
 

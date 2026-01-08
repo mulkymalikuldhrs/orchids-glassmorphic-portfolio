@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Download, Mail, Instagram, Github, Globe, MapPin } from 'lucide-react';
 
