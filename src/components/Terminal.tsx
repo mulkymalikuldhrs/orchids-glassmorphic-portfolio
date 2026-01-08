@@ -116,7 +116,7 @@ export function Terminal() {
 
     playClick();
     const [cmd, ...args] = input.trim().toLowerCase().split(" ");
-    const response = commands[cmd] ? commands[cmd](args) : { 
+    const response: CommandResponse = commands[cmd] ? commands[cmd](args) : { 
       type: "error", 
       content: language === 'en' ? `Command not found: ${cmd}. Type 'help' for options.` : `Perintah tidak ditemukan: ${cmd}. Ketik 'help' untuk bantuan.` 
     };
