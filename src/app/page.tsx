@@ -48,9 +48,9 @@ export default function Home() {
               href="/ai" 
               onClick={playClick}
               onMouseEnter={playHover}
-              className="group flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 glass rounded-full hover:bg-white/10 transition-all duration-500 text-sm sm:text-base"
+              className="group flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 glass-vision rounded-full hover:bg-white/10 transition-all duration-500 text-sm sm:text-base shadow-xl"
             >
-              <span className="font-light">{t.home.cta}</span>
+              <span className="font-medium">{t.home.cta}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <div className="flex items-center gap-3 sm:gap-4">
@@ -59,7 +59,7 @@ export default function Home() {
                 target="_blank" 
                 onClick={playClick}
                 onMouseEnter={playHover}
-                className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" 
+                className="p-3 sm:p-4 glass-vision rounded-full hover:bg-white/10 transition-all duration-500 shadow-lg" 
                 title="GitHub"
               >
                 <Github className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -69,7 +69,7 @@ export default function Home() {
                 target="_blank" 
                 onClick={playClick}
                 onMouseEnter={playHover}
-                className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" 
+                className="p-3 sm:p-4 glass-vision rounded-full hover:bg-white/10 transition-all duration-500 shadow-lg" 
                 title="Instagram"
               >
                 <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -78,7 +78,7 @@ export default function Home() {
                 href="mailto:mulkymalikuldhr@mail.com" 
                 onClick={playClick}
                 onMouseEnter={playHover}
-                className="p-3 sm:p-4 glass rounded-full hover:bg-white/10 transition-all duration-500" 
+                className="p-3 sm:p-4 glass-vision rounded-full hover:bg-white/10 transition-all duration-500 shadow-lg" 
                 title="Email"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
