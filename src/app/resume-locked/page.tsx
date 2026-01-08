@@ -169,7 +169,7 @@ export default function ResumeLockedPage() {
                           <p className="text-xs text-white/40">Teknik Elektro · 2015 — 2016 (Completed basic courses)</p>
                         </div>
                       </div>
-                    </section> section>
+                    </section>
                   </div>
 
                   <div className="space-y-12">
