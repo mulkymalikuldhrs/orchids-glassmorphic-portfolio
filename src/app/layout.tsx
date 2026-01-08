@@ -5,6 +5,7 @@ import { VisitorTracker } from "@/components/VisitorTracker";
 import { Navbar } from "@/components/Navbar";
 import { ClientProviders } from "@/components/ClientProviders";
 import { AIPet } from "@/components/AIPet";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Mulky Malikul Dhaher | System Builder & Developer",
@@ -85,6 +86,12 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen relative overflow-x-hidden bg-background">
+        <Script
+          id="orchids-browser-logs"
+          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
+          strategy="afterInteractive"
+          data-orchids-project-id="5fe886a9-3e99-4faa-b7d5-8e128951ffb5"
+        />
           <ClientProviders>
             <VisitorTracker />
             <AIPet />
