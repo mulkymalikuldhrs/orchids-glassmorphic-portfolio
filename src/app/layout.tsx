@@ -7,8 +7,55 @@ import { ClientProviders } from "@/components/ClientProviders";
 import { AIPet } from "@/components/AIPet";
 
 export const metadata: Metadata = {
-  title: "Mulky Malikul Dhaher",
-  description: "Building systems, not noise. Personal workspace of Mulky Malikul Dhaher.",
+  title: "Mulky Malikul Dhaher | System Builder & Developer",
+  description: "Building systems, not noise. Personal workspace of Mulky Malikul Dhaher. Expert in Glassmorphic design, Next.js, and Fullstack Development.",
+  keywords: [
+    "Mulky Malikul Dhaher", 
+    "System Builder", 
+    "Software Engineer", 
+    "Next.js Developer", 
+    "React Developer", 
+    "Glassmorphic Design", 
+    "Portfolio", 
+    "Tech Trends 2026", 
+    "Aceh Subtle", 
+    "Fullstack Developer",
+    "Web Development",
+    "Creative Coding",
+    "UI/UX Design",
+    "Modern Web",
+    "#MulkyMalikulDhaher",
+    "#SystemBuilder",
+    "#NextJS",
+    "#Glassmorphism",
+    "#DeveloperPortfolio"
+  ],
+  authors: [{ name: "Mulky Malikul Dhaher" }],
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://mulkymalikuldhaher.com",
+    title: "Mulky Malikul Dhaher | System Builder & Developer",
+    description: "Building systems, not noise. Personal workspace of Mulky Malikul Dhaher.",
+    siteName: "Mulky Malikul Dhaher Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mulky Malikul Dhaher | System Builder & Developer",
+    description: "Building systems, not noise.",
+    creator: "@mulkymalikuldhr",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -18,6 +65,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Mulky Malikul Dhaher",
+              "url": "https://mulkymalikuldhaher.com",
+              "jobTitle": "System Builder & Software Engineer",
+              "description": "Expert in Next.js, Glassmorphism, and modern web systems.",
+              "sameAs": [
+                "https://github.com/mulkymalikuldhrs",
+                "https://instagram.com/mulkymalikuldhr"
+              ]
+            })
+          }}
+        />
+      </head>
       <body className="antialiased min-h-screen relative overflow-x-hidden bg-background">
           <ClientProviders>
             <VisitorTracker />
