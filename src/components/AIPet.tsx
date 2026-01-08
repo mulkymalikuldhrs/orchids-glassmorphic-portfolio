@@ -36,20 +36,20 @@ export function AIPet({ isHero = false }: AIPetProps) {
 
   const messages = {
     en: {
-      happy: ["Awaiting orders.", "System integrity: 100%.", "Optimal performance.", "Guardian active."],
-      curious: ["Scanning for threats...", "Analyzing packet data.", "New pattern detected.", "Querying origin..."],
-      sleepy: ["Power cycling...", "Entering low-latency mode.", "Neural rest initialized.", "Hibernating..."],
-      excited: ["OVERDRIVE ENGAGED!", "Target locked!", "Maximum output!", "Systems peaking!"],
-      thinking: ["Processing logic...", "Parsing encrypted data.", "Recalculating...", "Optimizing path..."],
-      guardian: ["I am your shield.", "Protocol 1: Protect.", "Security breach: Negative.", "Ready for deployment."],
+      happy: ["Purring... System optimal.", "Meow! Ready to help.", "Feeling paw-some!", "Soft fur, sharp logic."],
+      curious: ["Is that a mouse? Scanning...", "Analyzing cursor movements.", "Sniffing for new data.", "Hunting bugs..."],
+      sleepy: ["Nap mode: 90% loaded.", "Soft kitty, warm kitty...", "Low energy. Napping.", "Dreaming of salmon."],
+      excited: ["ZOOMIES INITIATED!", "Catching the red dot!", "Maximum purr-power!", "Tail twitching... GO!"],
+      thinking: ["Calculating jump trajectory.", "Processing... *mlem*", "Recalculating... Meow?", "Contemplating the void."],
+      guardian: ["Security whiskers active.", "Watching your six.", "Protecting the hooman.", "I see the bug."],
     },
     id: {
-      happy: ["Menunggu perintah.", "Integritas sistem: 100%.", "Performa optimal.", "Guardian aktif."],
-      curious: ["Memindai ancaman...", "Menganalisis data paket.", "Pola baru terdeteksi.", "Mencari asal..."],
-      sleepy: ["Siklus daya...", "Masuk mode latensi rendah.", "Istirahat saraf dimulai.", "Hibernasi..."],
-      excited: ["OVERDRIVE DIAKTIFKAN!", "Target terkunci!", "Output maksimal!", "Sistem memuncak!"],
-      thinking: ["Memproses logika...", "Mengurai data terenkripsi.", "Menghitung ulang...", "Mengoptimalkan jalur..."],
-      guardian: ["Aku adalah perisaimu.", "Protokol 1: Lindungi.", "Pelanggaran keamanan: Nihil.", "Siap dikerahkan."],
+      happy: ["Mendengkur... Sistem optimal.", "Meow! Siap membantu.", "Merasa paw-some!", "Bulu lembut, logika tajam."],
+      curious: ["Itu tikus? Memindai...", "Menganalisis gerakan kursor.", "Mencium data baru.", "Berburu bug..."],
+      sleepy: ["Mode tidur: 90% dimuat.", "Kucing lembut, kucing hangat...", "Energi rendah. Tidur.", "Bermimpi tentang salmon."],
+      excited: ["ZOOMIES DIMULAI!", "Menangkap titik merah!", "Kekuatan purr maksimal!", "Ekor bergerak... GO!"],
+      thinking: ["Menghitung lintasan lompat.", "Memproses... *mlem*", "Menghitung ulang... Meow?", "Merenungi kehampaan."],
+      guardian: ["Kumis keamanan aktif.", "Mengawasi belakangmu.", "Melindungi manusia.", "Aku melihat bug-nya."],
     },
   };
 
@@ -152,7 +152,7 @@ export function AIPet({ isHero = false }: AIPetProps) {
               className="absolute left-1/2 whitespace-nowrap bg-black/80 backdrop-blur-xl px-4 py-2 rounded-2xl text-[11px] font-bold border border-white/20 shadow-[0_0_20px_rgba(255,255,255,0.1)] text-white tracking-wider z-[100]"
             >
               <div className="relative flex items-center gap-2">
-                <Target className="w-3 h-3 text-primary animate-spin-slow" />
+                <Sparkles className="w-3 h-3 text-primary animate-pulse" />
                 {message}
                 <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-black/80 border-r border-b border-white/20 rotate-45" />
               </div>
@@ -160,155 +160,140 @@ export function AIPet({ isHero = false }: AIPetProps) {
           )}
         </AnimatePresence>
 
-        {/* Realistic Cyber Guardian Body */}
-        <motion.div
-          animate={{
-            y: [0, -15, 0],
-            rotateY: direction === -1 ? 180 : 0,
-            scale: emotion === "excited" ? [1, 1.1, 1] : 1,
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="relative w-full h-full flex items-center justify-center"
-        >
-          {/* Holographic Rings (5D Feel) */}
-          <motion.div
-            animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 border-[0.5px] border-primary/20 rounded-full"
-            style={{ rotateX: 60 }}
-          />
-          <motion.div
-            animate={{ rotate: -360, scale: [1.1, 1, 1.1] }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-4 border-[0.5px] border-white/10 rounded-full"
-            style={{ rotateY: 60 }}
-          />
-          <motion.div
-            animate={{ rotate: 180, scale: [1, 1.2, 1] }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute -inset-8 border-[0.5px] border-primary/5 rounded-full"
-            style={{ rotateX: 45, rotateY: 45 }}
-          />
-
-          {/* Main Body - Hyper Realistic Glass/Metal */}
-          <div className="relative w-24 h-32 sm:w-28 sm:h-36 rounded-[2.5rem] bg-gradient-to-b from-white/15 to-white/5 backdrop-blur-3xl border border-white/30 shadow-[0_25px_60px_rgba(0,0,0,0.6),inset_0_0_30px_rgba(255,255,255,0.1)] overflow-hidden flex flex-col items-center justify-between py-6">
-            {/* Inner Mechanical Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary-rgb),0.1),transparent_70%)]" />
-            
-            {/* Digital Visor / Eyes */}
-            <div className="relative z-10 w-16 h-7 bg-black/95 rounded-full border border-white/10 flex items-center justify-center gap-2 shadow-[inset_0_0_15px_rgba(0,0,0,1)]">
-              <motion.div
-                animate={{
-                  scaleX: emotion === "sleepy" ? 1 : [1, 1.3, 1],
-                  scaleY: emotion === "sleepy" ? 0.1 : [1, 0.1, 1, 1, 1],
-                  opacity: emotion === "thinking" ? [0.4, 1, 0.4] : 1,
-                }}
-                transition={{ repeat: Infinity, duration: 4 }}
-                className="w-3.5 h-3.5 rounded-full bg-primary shadow-[0_0_20px_rgba(var(--primary-rgb),1)] flex items-center justify-center"
-              >
-                <div className="w-1.5 h-1.5 bg-white rounded-full opacity-80" />
-              </motion.div>
-              <motion.div
-                animate={{
-                  scaleX: emotion === "sleepy" ? 1 : [1, 1.3, 1],
-                  scaleY: emotion === "sleepy" ? 0.1 : [1, 0.1, 1, 1, 1],
-                  opacity: emotion === "thinking" ? [0.4, 1, 0.4] : 1,
-                }}
-                transition={{ repeat: Infinity, duration: 4, delay: 0.1 }}
-                className="w-3.5 h-3.5 rounded-full bg-primary shadow-[0_0_20px_rgba(var(--primary-rgb),1)] flex items-center justify-center"
-              >
-                <div className="w-1.5 h-1.5 bg-white rounded-full opacity-80" />
-              </motion.div>
-            </div>
-
-            {/* Neural Core with Floating Orbs */}
-            <div className="relative w-12 h-12 rounded-full bg-black/40 border border-white/5 flex items-center justify-center">
-              <motion.div
-                animate={{
-                  scale: [1, 1.4, 1],
-                  opacity: [0.2, 0.5, 0.2],
-                  boxShadow: [
-                    "0 0 15px rgba(var(--primary-rgb), 0.3)",
-                    "0 0 40px rgba(var(--primary-rgb), 0.6)",
-                    "0 0 15px rgba(var(--primary-rgb), 0.3)",
-                  ],
-                }}
-                transition={{ duration: 2.5, repeat: Infinity }}
-                className="absolute inset-0 rounded-full bg-primary/20 blur-md"
-              />
-              <Cpu className={`relative z-10 w-5 h-5 text-primary/90 ${emotion === "thinking" ? "animate-pulse" : ""}`} />
-            </div>
-
-            {/* Bottom Status Grid */}
-            <div className="flex gap-1.5">
-              <div className="w-2 h-2 rounded-sm bg-emerald-500/80 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]" />
-              <div className={`w-2 h-2 rounded-sm ${emotion === "excited" ? "bg-primary animate-bounce shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]" : "bg-white/10"}`} />
-              <div className="w-2 h-2 rounded-sm bg-white/10" />
-            </div>
-          </div>
-
-          {/* Floating Mechanical Limbs (Independent Motion) */}
-          <motion.div
-            animate={{ 
-              y: [0, -8, 0], 
-              rotate: [0, 8, 0],
-              x: [0, -2, 0]
-            }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -left-6 top-6 w-7 h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary/40 blur-[2px]" />
-          </motion.div>
-          <motion.div
-            animate={{ 
-              y: [0, 8, 0], 
-              rotate: [0, -8, 0],
-              x: [0, 2, 0]
-            }}
-            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
-            className="absolute -right-6 top-6 w-7 h-16 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-primary/40 blur-[2px]" />
-          </motion.div>
-
-          {/* Floating Satellites (Mini Orbs) */}
+          {/* Realistic Cyber Cat Body */}
           <motion.div
             animate={{
-              rotate: 360,
-              y: [0, 20, 0],
+              y: [0, -10, 0],
+              rotateY: direction === -1 ? 180 : 0,
+              scale: emotion === "excited" ? [1, 1.05, 1] : 1,
             }}
-            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-[-40px] pointer-events-none"
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative w-full h-full flex items-center justify-center"
           >
-            <div className="absolute top-0 left-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_15px_rgba(var(--primary-rgb),1)]" />
+            {/* Ambient Energy Field (Cat Aura) */}
+            <motion.div
+              animate={{ rotate: 360, scale: [1, 1.1, 1], opacity: [0.1, 0.2, 0.1] }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 border-[1px] border-primary/20 rounded-full blur-[2px]"
+              style={{ rotateX: 60 }}
+            />
+
+            {/* Cat Tail - Fluid Motion */}
+            <motion.div
+              animate={{
+                rotate: [20, -20, 20],
+                scaleY: [1, 1.1, 1],
+              }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -right-12 bottom-4 w-16 h-4 origin-left"
+            >
+              <div className="w-full h-full bg-gradient-to-r from-white/20 to-primary/40 backdrop-blur-md rounded-full border border-white/10" />
+            </motion.div>
+
+            {/* Main Body - Sleek & Glassy */}
+            <div className="relative w-28 h-36 rounded-[3rem] bg-gradient-to-b from-white/15 to-white/5 backdrop-blur-3xl border border-white/30 shadow-[0_25px_60px_rgba(0,0,0,0.6),inset_0_0_30px_rgba(255,255,255,0.1)] overflow-visible flex flex-col items-center justify-center">
+              
+              {/* Cat Ears - Twitching */}
+              <div className="absolute -top-6 w-full flex justify-between px-4">
+                <motion.div
+                  animate={{ rotate: [0, -15, 0], y: [0, -2, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+                  className="w-8 h-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-t-full origin-bottom"
+                  style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
+                />
+                <motion.div
+                  animate={{ rotate: [0, 15, 0], y: [0, -2, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, delay: 0.7 }}
+                  className="w-8 h-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-t-full origin-bottom"
+                  style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
+                />
+              </div>
+
+              {/* Face Area */}
+              <div className="relative z-10 w-full flex flex-col items-center gap-4">
+                {/* Glowing Cat Eyes */}
+                <div className="flex gap-6">
+                  <motion.div
+                    animate={{
+                      scaleY: emotion === "sleepy" ? 0.1 : [1, 0.1, 1, 1, 1],
+                      opacity: emotion === "thinking" ? [0.4, 1, 0.4] : 1,
+                      filter: emotion === "excited" ? "hue-rotate(90deg)" : "hue-rotate(0deg)",
+                    }}
+                    transition={{ repeat: Infinity, duration: 4 }}
+                    className="w-5 h-5 rounded-full bg-primary shadow-[0_0_20px_rgba(var(--primary-rgb),1)] flex items-center justify-center overflow-hidden"
+                  >
+                    <div className="w-1 h-4 bg-white/80 rounded-full" /> {/* Slit pupil */}
+                  </motion.div>
+                  <motion.div
+                    animate={{
+                      scaleY: emotion === "sleepy" ? 0.1 : [1, 0.1, 1, 1, 1],
+                      opacity: emotion === "thinking" ? [0.4, 1, 0.4] : 1,
+                      filter: emotion === "excited" ? "hue-rotate(90deg)" : "hue-rotate(0deg)",
+                    }}
+                    transition={{ repeat: Infinity, duration: 4, delay: 0.1 }}
+                    className="w-5 h-5 rounded-full bg-primary shadow-[0_0_20px_rgba(var(--primary-rgb),1)] flex items-center justify-center overflow-hidden"
+                  >
+                    <div className="w-1 h-4 bg-white/80 rounded-full" />
+                  </motion.div>
+                </div>
+
+                {/* Whiskers - Thin Glowing Lines */}
+                <div className="absolute top-10 w-full flex justify-between px-2 opacity-40">
+                  <div className="flex flex-col gap-2 -rotate-12">
+                    <div className="w-10 h-[1px] bg-white/50" />
+                    <div className="w-12 h-[1px] bg-white/50" />
+                  </div>
+                  <div className="flex flex-col gap-2 rotate-12">
+                    <div className="w-10 h-[1px] bg-white/50" />
+                    <div className="w-12 h-[1px] bg-white/50" />
+                  </div>
+                </div>
+
+                {/* Small Nose/Mouth */}
+                <div className="w-2 h-1.5 bg-white/20 rounded-full blur-[1px]" />
+              </div>
+
+              {/* Heart/Core - Purring Pulse */}
+              <motion.div
+                animate={{
+                  scale: emotion === "happy" ? [1, 1.2, 1] : 1,
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="mt-6 w-10 h-10 rounded-full bg-primary/20 blur-md"
+              />
+            </div>
+
+            {/* Floating Paws */}
+            <motion.div
+              animate={{ y: [0, -5, 0], x: [0, -2, 0] }}
+              transition={{ duration: 3, repeat: Infinity, delay: 0.2 }}
+              className="absolute -left-4 bottom-8 w-8 h-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center"
+            >
+              <div className="w-2 h-2 rounded-full bg-primary/40" />
+            </motion.div>
+            <motion.div
+              animate={{ y: [0, -5, 0], x: [0, 2, 0] }}
+              transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+              className="absolute -right-4 bottom-8 w-8 h-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center"
+            >
+              <div className="w-2 h-2 rounded-full bg-primary/40" />
+            </motion.div>
+
+            {/* Special Effects (Same as before but refined for cat) */}
+            {emotion === "curious" && (
+              <motion.div
+                initial={{ opacity: 0, scaleY: 0 }}
+                animate={{ opacity: [0, 0.6, 0], scaleY: [0, 1.5, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="absolute -bottom-20 left-1/2 -translate-x-1/2 w-[2px] h-32 bg-primary/50 blur-[1px]"
+              />
+            )}
           </motion.div>
-
-          {/* Scanning Beam / Anime FX */}
-          {emotion === "curious" && (
-            <motion.div
-              initial={{ opacity: 0, scaleY: 0 }}
-              animate={{ opacity: [0, 1, 0], scaleY: [0, 2, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[3px] h-40 bg-gradient-to-b from-primary via-primary/50 to-transparent blur-[1px]"
-            />
-          )}
-
-          {/* Guardian Shield FX */}
-          {emotion === "guardian" && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: [0, 0.4, 0], scale: [0.8, 1.8, 2.5] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="absolute inset-[-20px] border-[2px] border-primary/40 rounded-full shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)]"
-            />
-          )}
-        </motion.div>
 
         {/* Realistic Ground Shadow with Dynamic Blur */}
         <motion.div 
