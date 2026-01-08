@@ -149,7 +149,7 @@ export function Terminal() {
         onClick={() => inputRef.current?.focus()}
       >
         <div className="text-primary/60 mb-4">
-          Welcome to Mulky AI System Kernel. Type 'help' to begin.
+          Welcome to Mulky AI System Kernel. Type &apos;help&apos; to begin.
         </div>
         
         {history.map((entry, i) => (
