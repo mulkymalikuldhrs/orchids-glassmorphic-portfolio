@@ -48,7 +48,8 @@ export function CreatorPopup({ isOpen, onClose }: CreatorPopupProps) {
                   className="absolute inset-0 flex justify-center items-end"
                 >
                   <img
-                    src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/5fe886a9-3e99-4faa-b7d5-8e128951ffb5/aifaceswap-b8b8473f7f497e39f19277a9ebe538e3-1-resized-1767835389040.jpg?width=8000&height=8000&resize=contain"
+                      src="https://huuuiecurrrylshywheo.supabase.co/storage/v1/render/image/public/project-uploads/5fe886a9-3e99-4faa-b7d5-8e128951ffb5/aifaceswap-b8b8473f7f497e39f19277a9ebe538e3-1-resized-1767835389040.jpg?width=8000&height=8000&resize=contain"
+
                     alt="Mulky Malikul Dhaher"
                     className="h-[110%] w-auto object-contain select-none pointer-events-none"
                     style={{
