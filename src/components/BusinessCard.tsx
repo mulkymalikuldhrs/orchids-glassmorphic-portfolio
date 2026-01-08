@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from 'react';
@@ -79,11 +78,33 @@ export function BusinessCard() {
 
       ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
       ctx.font = 'italic 22px sans-serif';
-        ctx.fillText('"Aceh Subtle: Tenang, keras di dalam."', 60, 530);
-...
-            <div className="text-[9px] sm:text-[10px] text-white/30 italic font-light">
-              &quot;Aceh Subtle: Tenang, keras di dalam.&quot;
-            </div>
+      ctx.fillText('"Aceh Subtle: Tenang, keras di dalam."', 60, 530);
+
+      ctx.font = '22px sans-serif';
+      ctx.fillText('github.com/mulkymalikuldhrs', width - 350, 530);
+
+      // 8. Download
+      const dataUrl = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.download = `BusinessCard-MulkyMalikulDhaher.png`;
+      link.href = dataUrl;
+      link.click();
+
+    } catch (err) {
+      console.error('Download failed', err);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
+  return (
+    <div className="flex flex-col items-center gap-8 py-12">
+      <div className="flex flex-col items-center text-center mb-4">
+        <h2 className="text-2xl font-light tracking-tight mb-2 text-white/90">Digital Business Card</h2>
+        <p className="text-sm text-white/40 font-light max-w-xs italic">
+          Professional identity card for print and sharing.
+        </p>
+      </div>
 
       {/* The Visual Card (Preview) */}
       <div 
@@ -118,7 +139,7 @@ export function BusinessCard() {
 
         <div className="relative z-10 flex justify-between items-end border-t border-white/5 pt-3">
           <div className="text-[9px] sm:text-[10px] text-white/30 italic font-light">
-            "Aceh Subtle: Tenang, keras di dalam."
+            &quot;Aceh Subtle: Tenang, keras di dalam.&quot;
           </div>
           <div className="flex gap-3 text-white/40">
             <Github className="w-3 h-3" />

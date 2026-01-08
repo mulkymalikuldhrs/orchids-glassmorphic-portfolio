@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { GlassCard } from "@/components/GlassCard";
 import { ArrowRight, Github, Instagram, Mail, User } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/hooks/useLanguage";

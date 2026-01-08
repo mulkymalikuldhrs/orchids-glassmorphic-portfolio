@@ -1,0 +1,10 @@
+/* TEAM */
+Creator: Mulky Malikul Dhaher
+Site: https://mulkymalikuldhaher.com
+Location: Lhokseumawe, Aceh, Indonesia
+
+/* SITE */
+Last update: 2024
+Standards: HTML5, CSS3, Next.js, TypeScript
+Components: Framer Motion, Lucide React, Tailwind CSS
+Software: Vercel, Supabase
