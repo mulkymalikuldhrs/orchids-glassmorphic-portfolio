@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     
     // Get IP address from headers
     const forwarded = req.headers.get('x-forwarded-for');
-    const ip = forwarded ? forwarded.split(',')[0] : req.ip || 'unknown';
+    const ip = forwarded ? forwarded.split(',')[0] : 'unknown';
     
     // Get User Agent
     const ua = req.headers.get('user-agent') || 'unknown';
