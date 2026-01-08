@@ -70,6 +70,9 @@ const DRIFTING_THOUGHTS = [
   { text: "Time is a fluid.", state: "resting" },
   { text: "Motion without purpose is noise.", state: "idle" },
   { text: "Watching the light shift.", state: "curious" },
+  { text: "The architect is observing.", state: "curious" },
+  { text: "Building silence, piece by piece.", state: "resting" },
+  { text: "He is here, in the code.", state: "alert" },
 ];
 
 export async function POST(req: Request) {
