@@ -20,11 +20,6 @@ export function AIPet({ isHero = false }: AIPetProps) {
   const [direction, setDirection] = useState(1);
   const lastInteractionTime = useRef(Date.now());
 
-  // Hide global pet on home page since we have a hero version there
-  if (!isHero && pathname === "/") {
-    return null;
-  }
-
   // 3D Tilt Logic for Hero
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -102,6 +97,11 @@ export function AIPet({ isHero = false }: AIPetProps) {
 
     return () => clearInterval(loop);
   }, [isHero, position.x, state, triggerBubble, getRandomMovement]);
+
+  // Hide global pet on home page since we have a hero version there
+  if (!isHero && pathname === "/") {
+    return null;
+  }
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
