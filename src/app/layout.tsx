@@ -5,6 +5,7 @@ import { VisitorTracker } from "@/components/VisitorTracker";
 import { Navbar } from "@/components/Navbar";
 import { ClientProviders } from "@/components/ClientProviders";
 import { AIPet } from "@/components/AIPet";
+import { Donation } from "@/components/Donation";
 import Script from "next/script";
 
 export const metadata: Metadata = {
