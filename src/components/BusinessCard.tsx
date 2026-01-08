@@ -79,7 +79,8 @@ export function BusinessCard() {
 
       ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
       ctx.font = 'italic 22px sans-serif';
-      ctx.fillText('"Aceh Subtle: Tenang, keras di dalam."', 60, 530);
+        ctx.fillText('&quot;Aceh Subtle: Tenang, keras di dalam.&quot;', 60, 530);
+
 
       ctx.font = '22px sans-serif';
       ctx.fillText('github.com/mulkymalikuldhrs', width - 350, 530);
