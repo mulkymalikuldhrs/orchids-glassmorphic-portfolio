@@ -27,43 +27,78 @@ export function Terminal() {
     }
   }, [history]);
 
-  const commands: Record<string, (args: string[]) => CommandResponse> = {
-    help: () => ({
-      type: "list",
-      content: language === 'en' 
-        ? ["ls - list directory", "cat [file] - read file", "projects - show portfolio", "clear - clear terminal", "whoami - system info", "contact - get contact info"]
-        : ["ls - daftar direktori", "cat [file] - baca file", "projects - tampilkan portofolio", "clear - hapus terminal", "whoami - info sistem", "contact - info kontak"]
-    }),
-    ls: () => ({
-      type: "text",
-      content: "about.md  projects/  resume.pdf  contact.sh  brain.core"
-    }),
-    whoami: () => ({
-      type: "text",
-      content: language === 'en'
-        ? "MULKY_OS v1.0.4-L | Kernel: Aceh-Subtle-v2 | User: Guest"
-        : "MULKY_OS v1.0.4-L | Kernel: Aceh-Subtle-v2 | Pengguna: Tamu"
-    }),
-    clear: () => {
-      setHistory([]);
-      return { type: "text", content: "" };
-    },
-    projects: () => ({
-      type: "list",
-      content: ["- Mulky AI (This)", "- Betta Core Ecosystem", "- Glassmorphic Portfolio", "- Stripe Integration Demo"]
-    }),
-    contact: () => ({
-      type: "list",
-      content: ["Email: mulkymalikuldhr@mail.com", "GitHub: github.com/mulkymalikuldhrs", "IG: @mulkymalikuldhr"]
-    }),
-    cat: (args) => {
-      const file = args[0];
-      if (!file) return { type: "error", content: "Usage: cat [file]" };
-      if (file === "about.md") return { type: "text", content: "Mulky is a developer focused on minimalist, high-impact digital experiences. Born in Aceh, based in the cloud." };
-      if (file === "brain.core") return { type: "text", content: "[ENCRYPTED_DATA] - Betta_Core thoughts circulating..." };
-      return { type: "error", content: `File not found: ${file}` };
-    }
-  };
+    const commands: Record<string, (args: string[]) => CommandResponse> = {
+      help: () => ({
+        type: "list",
+        content: language === 'en' 
+          ? ["ls - list directory", "cat [file] - read file", "projects - show portfolio", "clear - clear terminal", "whoami - system info", "contact - get contact info", "date - current time", "uname - OS details", "pwd - current path", "hostname - system name"]
+          : ["ls - daftar direktori", "cat [file] - baca file", "projects - tampilkan portofolio", "clear - hapus terminal", "whoami - info sistem", "contact - info kontak", "date - waktu sistem", "uname - detail OS", "pwd - lokasi saat ini", "hostname - nama sistem"]
+      }),
+      ls: (args) => {
+        if (args.includes("-l")) {
+          return {
+            type: "list",
+            content: [
+              "drwxr-xr-x  2  mulky  staff   64B  Oct 12  projects",
+              "-rw-r--r--  1  mulky  staff  1.2K  Oct 12  about.md",
+              "-rw-r--r--  1  mulky  staff  4.5K  Oct 12  resume.pdf",
+              "-rwxr-xr-x  1  mulky  staff   89B  Oct 12  contact.sh",
+              "-rw-------  1  mulky  staff  128B  Oct 12  brain.core"
+            ]
+          };
+        }
+        return {
+          type: "text",
+          content: "about.md  projects/  resume.pdf  contact.sh  brain.core"
+        };
+      },
+      whoami: () => ({
+        type: "text",
+        content: language === 'en'
+          ? "MULKY_OS v1.0.4-L | Kernel: Aceh-Subtle-v2 | User: Guest"
+          : "MULKY_OS v1.0.4-L | Kernel: Aceh-Subtle-v2 | Pengguna: Tamu"
+      }),
+      clear: () => {
+        setHistory([]);
+        return { type: "text", content: "" };
+      },
+      projects: () => ({
+        type: "list",
+        content: ["- Mulky AI (This)", "- Betta Core Ecosystem", "- Glassmorphic Portfolio", "- Stripe Integration Demo"]
+      }),
+      contact: () => ({
+        type: "list",
+        content: ["Email: mulkymalikuldhr@mail.com", "GitHub: github.com/mulkymalikuldhrs", "IG: @mulkymalikuldhr"]
+      }),
+      cat: (args) => {
+        const file = args[0];
+        if (!file) return { type: "error", content: "Usage: cat [file]" };
+        if (file === "about.md") return { type: "text", content: "Mulky is a developer focused on minimalist, high-impact digital experiences. Born in Aceh, based in the cloud." };
+        if (file === "brain.core") return { type: "text", content: "[ENCRYPTED_DATA] - Betta_Core thoughts circulating..." };
+        return { type: "error", content: `File not found: ${file}` };
+      },
+      date: () => ({
+        type: "text",
+        content: new Date().toString()
+      }),
+      uname: () => ({
+        type: "text",
+        content: "MulkyOS 1.0.4-Aceh-Subtle-v2 x86_64"
+      }),
+      pwd: () => ({
+        type: "text",
+        content: "/home/mulky/portfolio"
+      }),
+      hostname: () => ({
+        type: "text",
+        content: "mulky-workspace"
+      }),
+      echo: (args) => ({
+        type: "text",
+        content: args.join(" ")
+      })
+    };
+
 
   const handleCommand = (e: React.FormEvent) => {
     e.preventDefault();
