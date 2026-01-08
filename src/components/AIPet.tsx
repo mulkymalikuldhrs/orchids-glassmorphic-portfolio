@@ -93,31 +93,25 @@ export function AIPet({ isHero = false }: AIPetProps) {
       const now = Date.now();
       const idleTime = now - lastInteractionTime.current;
 
-      // Random state change
-      if (Math.random() > 0.7) {
-        const states: BettaState[] = ["idle", "resting", "curious"];
-        setState(states[Math.floor(Math.random() * states.length)]);
-      }
-
-      // Movement logic
-      if (!isHero && Math.random() > 0.6) {
+      // Random movement logic
+      if (!isHero && Math.random() > 0.4) {
         const nextPos = getRandomMovement();
         setDirection(nextPos.x > position.x ? 1 : -1);
         setPosition(nextPos);
       }
 
-      // Random bubble logic (45-180 seconds frequency handled by larger probability window)
-      if (Math.random() > 0.92) {
-        triggerBubble();
+      // Random bubble logic (respecting the 45-180s range via probability)
+      // Check every 15s, if we hit 15% chance, it roughly averages to 100s
+      if (Math.random() > 0.85) {
+        triggerBubble(idleTime > 60000 ? "idle" : "moving");
       }
 
-      // Alert state if idle too long
+      // State handling
       if (idleTime > 60000 && state !== "resting") {
         setState("resting");
-        if (Math.random() > 0.8) triggerBubble("Stillness is productive.");
       }
 
-    }, 15000); // Check every 15s
+    }, 15000); // Pulse every 15s
 
     return () => clearInterval(loop);
   }, [isHero, position.x, state, triggerBubble, getRandomMovement]);
@@ -131,9 +125,10 @@ export function AIPet({ isHero = false }: AIPetProps) {
     
     lastInteractionTime.current = Date.now();
     
-    // Proximity reaction
-    if (Math.abs(x) < 100 && Math.abs(y) < 100 && state !== "curious") {
+    // Proximity reaction: curious
+    if (Math.abs(x) < 150 && Math.abs(y) < 150 && state !== "curious") {
       setState("curious");
+      if (Math.random() > 0.9) triggerBubble("hover"); // Rare reaction to hover
     }
   };
 
