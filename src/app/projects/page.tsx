@@ -65,22 +65,35 @@ export default function ProjectsPage() {
               : "Repositori GitHub langsung. Sinkronisasi otomatis dan selalu terbaru."}
           </p>
           
-          {/* Contributor Invitation */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
-            className="mb-8 p-4 glass-vision border-primary/20 rounded-2xl bg-primary/5"
-          >
-            <h2 className="text-primary text-sm font-semibold mb-1 uppercase tracking-widest">
-              {language === "en" ? "Contributors Welcome" : "Selamat Datang Kontributor"}
-            </h2>
-            <p className="text-xs text-white/60 leading-relaxed">
-              {language === "en" 
-                ? "I am actively looking for collaborators and contributors for my open-source projects. Whether you are fixing bugs, adding features, or improving documentation, your help is highly valued."
-                : "Saya aktif mencari kolaborator dan kontributor untuk proyek sumber terbuka saya. Baik Anda memperbaiki bug, menambah fitur, atau meningkatkan dokumentasi, bantuan Anda sangat berharga."}
-            </p>
-          </motion.div>
+            {/* Contributor Invitation */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="mb-12 p-8 glass-vision border-primary/20 rounded-[2.5rem] bg-gradient-to-br from-primary/10 via-transparent to-transparent relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <RefreshCw className="w-16 h-16 animate-spin-slow" />
+              </div>
+              <h2 className="text-primary text-xl font-bold mb-3 uppercase tracking-[0.3em]">
+                {language === "en" ? "Build With Me" : "Membangun Bersama"}
+              </h2>
+              <p className="text-sm text-white/60 leading-relaxed max-w-xl mb-6">
+                {language === "en" 
+                  ? "I am actively looking for collaborators and contributors for my open-source projects. Whether you are fixing bugs, adding features, or improving documentation, your help is highly valued. Let's build the future of systems together."
+                  : "Saya aktif mencari kolaborator dan kontributor untuk proyek sumber terbuka saya. Baik Anda memperbaiki bug, menambah fitur, atau meningkatkan dokumentasi, bantuan Anda sangat berharga. Mari kita bangun masa depan sistem bersama-sama."}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest text-white/40">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  {language === "en" ? "Active Development" : "Pengembangan Aktif"}
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 text-[10px] uppercase tracking-widest text-white/40">
+                  {language === "en" ? "Open Issues" : "Isu Terbuka"}
+                </div>
+              </div>
+            </motion.div>
+
 
           <div className="flex items-center gap-4">
             <button
