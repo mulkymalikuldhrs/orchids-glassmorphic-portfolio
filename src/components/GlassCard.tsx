@@ -15,8 +15,12 @@ export function GlassCard({ children, className, delay = 0 }: GlassCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -4 }}
-      whileTap={{ scale: 0.99 }}
+      whileHover={{ 
+        y: -4,
+        backgroundColor: "rgba(255, 255, 255, 0.05)",
+        borderColor: "rgba(255, 255, 255, 0.15)"
+      }}
+      whileTap={{ scale: 0.98 }}
       onMouseEnter={playHover}
       onClick={playClick}
       transition={{ 
@@ -26,9 +30,13 @@ export function GlassCard({ children, className, delay = 0 }: GlassCardProps) {
         y: { type: "spring", stiffness: 300, damping: 20 }
       }}
       style={{ willChange: "transform, opacity" }}
-      className={cn("glass rounded-3xl p-8 transition-shadow hover:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.2)]", className)}
+      className={cn("glass rounded-[2.5rem] p-8", className)}
     >
-      {children}
+      {/* Inner Shine Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
+      <div className="relative z-10">
+        {children}
+      </div>
     </motion.div>
   );
 }
